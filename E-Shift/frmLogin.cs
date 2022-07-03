@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace E_Shift
 {
-    public partial class Form1 : Form
+    public partial class frmLogin : Form
     {
-        public Form1()
+        public frmLogin()
         {
             InitializeComponent();
         }
