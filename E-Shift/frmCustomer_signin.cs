@@ -41,7 +41,7 @@ namespace E_Shift
         private void loginLbl_Click(object sender, EventArgs e)
         {
             this.Hide(); //close this form
-            frmLogin frmLogin = new frmLogin(); //create object for customer login form
+            frmcCustomer_login frmLogin = new frmcCustomer_login(); //create object for customer login form
             frmLogin.Show(); //open customer login form
         }
     }

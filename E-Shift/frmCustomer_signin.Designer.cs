@@ -39,10 +39,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtFname = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtLname = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -52,6 +50,8 @@
             this.txtConfirmpwd = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.txtFname = new System.Windows.Forms.TextBox();
+            this.txtLname = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,14 +155,6 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Zip-code";
             // 
-            // txtFname
-            // 
-            this.txtFname.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtFname.Location = new System.Drawing.Point(668, 115);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(228, 31);
-            this.txtFname.TabIndex = 1;
-            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Helvetica", 12F);
@@ -178,14 +170,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(228, 31);
             this.txtUsername.TabIndex = 5;
-            // 
-            // txtLname
-            // 
-            this.txtLname.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtLname.Location = new System.Drawing.Point(968, 115);
-            this.txtLname.Name = "txtLname";
-            this.txtLname.Size = new System.Drawing.Size(228, 31);
-            this.txtLname.TabIndex = 2;
             // 
             // txtPhone
             // 
@@ -273,6 +257,22 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // txtFname
+            // 
+            this.txtFname.Font = new System.Drawing.Font("Helvetica", 12F);
+            this.txtFname.Location = new System.Drawing.Point(668, 115);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(228, 31);
+            this.txtFname.TabIndex = 1;
+            // 
+            // txtLname
+            // 
+            this.txtLname.Font = new System.Drawing.Font("Helvetica", 12F);
+            this.txtLname.Location = new System.Drawing.Point(968, 115);
+            this.txtLname.Name = "txtLname";
+            this.txtLname.Size = new System.Drawing.Size(228, 31);
+            this.txtLname.TabIndex = 2;
+            // 
             // frmCustomer_signin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -324,10 +324,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtLname;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.TextBox txtAddress;
@@ -337,5 +335,7 @@
         private System.Windows.Forms.TextBox txtConfirmpwd;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.TextBox txtFname;
+        private System.Windows.Forms.TextBox txtLname;
     }
 }

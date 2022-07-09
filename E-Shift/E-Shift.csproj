@@ -46,7 +46,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Dashboard\ucAdmin_dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucAdmin_dashboard.Designer.cs">
+      <DependentUpon>ucAdmin_dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucAdmin_profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucAdmin_profile.Designer.cs">
+      <DependentUpon>ucAdmin_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucCustomer_details.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucCustomer_details.Designer.cs">
+      <DependentUpon>ucCustomer_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucDriver_details.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucDriver_details.Designer.cs">
+      <DependentUpon>ucDriver_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucJob_details.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucJob_details.Designer.cs">
+      <DependentUpon>ucJob_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucProducts.Designer.cs">
+      <DependentUpon>ucProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cus_Dashboard\ucCustomer_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cus_Dashboard\ucCustomer_Dashboard.Designer.cs">
+      <DependentUpon>ucCustomer_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cus_Dashboard\ucCus_profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cus_Dashboard\ucCus_profile.Designer.cs">
+      <DependentUpon>ucCus_profile.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBase-Cls.cs" />
+    <Compile Include="frmAdmin_dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin_dashboard.Designer.cs">
+      <DependentUpon>frmAdmin_dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmin_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin_Login.Designer.cs">
+      <DependentUpon>frmAdmin_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomer_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,14 +125,32 @@
     <Compile Include="frmCustomer_signin.Designer.cs">
       <DependentUpon>frmCustomer_signin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="frmcCustomer_login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmcCustomer_login.Designer.cs">
+      <DependentUpon>frmcCustomer_login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin_Dashboard\ucAdmin_profile.resx">
+      <DependentUpon>ucAdmin_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\ucProducts.resx">
+      <DependentUpon>ucProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cus_Dashboard\ucCustomer_Dashboard.resx">
+      <DependentUpon>ucCustomer_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cus_Dashboard\ucCus_profile.resx">
+      <DependentUpon>ucCus_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmin_dashboard.resx">
+      <DependentUpon>frmAdmin_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmin_Login.resx">
+      <DependentUpon>frmAdmin_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustomer_dashboard.resx">
       <DependentUpon>frmCustomer_dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,8 +160,8 @@
     <EmbeddedResource Include="frmCustomer_signin.resx">
       <DependentUpon>frmCustomer_signin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmcCustomer_login.resx">
+      <DependentUpon>frmcCustomer_login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -113,6 +191,7 @@
     <Content Include="Resc\Login Temp 1.png" />
     <Content Include="Resc\Logo Bg White New 1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
