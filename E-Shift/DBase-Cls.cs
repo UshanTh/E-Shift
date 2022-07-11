@@ -16,6 +16,11 @@ namespace E_Shift
         public SqlCommand cmd;
         SqlDataAdapter sda;
         public DataTable Dtable;
+        public DataSet ds;
+        public SqlCommandBuilder scb;
+        //public SqlException SqlException;
+        public string password;
+        public string confirm_Password;
         String sql;
 
         public SqlConnection openConnection() //Open sql Connection
@@ -50,6 +55,13 @@ namespace E_Shift
             cmd = new SqlCommand(qry, con); //set the command object
             sqlRead = cmd.ExecuteReader(); //read the statement
             return sqlRead; //return the value
+        }
+
+        public void showRecords(string qry, string table_name)
+        {
+            sda = new SqlDataAdapter(qry, con);
+            ds = new System.Data.DataSet();
+            sda.Fill(ds, table_name);      
         }
 
     }

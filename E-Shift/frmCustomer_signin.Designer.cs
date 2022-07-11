@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer_signin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,7 +53,9 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.txtFname = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -162,6 +165,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(228, 31);
             this.txtEmail.TabIndex = 3;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtUsername
             // 
@@ -184,6 +188,7 @@
             this.txtPwd.Font = new System.Drawing.Font("Helvetica", 12F);
             this.txtPwd.Location = new System.Drawing.Point(668, 393);
             this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(228, 31);
             this.txtPwd.TabIndex = 7;
             // 
@@ -232,6 +237,7 @@
             this.txtConfirmpwd.Font = new System.Drawing.Font("Helvetica", 12F);
             this.txtConfirmpwd.Location = new System.Drawing.Point(968, 393);
             this.txtConfirmpwd.Name = "txtConfirmpwd";
+            this.txtConfirmpwd.PasswordChar = '*';
             this.txtConfirmpwd.Size = new System.Drawing.Size(228, 31);
             this.txtConfirmpwd.TabIndex = 8;
             // 
@@ -273,6 +279,10 @@
             this.txtLname.Size = new System.Drawing.Size(228, 31);
             this.txtLname.TabIndex = 2;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmCustomer_signin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -307,6 +317,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Register";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,5 +348,6 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.TextBox txtLname;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

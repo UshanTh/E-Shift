@@ -20,9 +20,10 @@ namespace E_Shift
         private ucProducts ucProducts;
         private ucJob_details ucJob_info;
 
-        public frmAdmin_dashboard()
+        public frmAdmin_dashboard(string username)
         {
             InitializeComponent();
+            lblUsr.Text = username;
         }
 
         internal void togglePanelMain(string panelname)
@@ -63,7 +64,7 @@ namespace E_Shift
                 case "Admin Profile":
                     if (this.ucAdmin_pro == null)
                     {
-                        this.ucAdmin_pro = new ucAdmin_profile();
+                        this.ucAdmin_pro = new ucAdmin_profile(lblUsr.Text);
                         this.pnl_Main.Controls.Add(ucAdmin_pro);
                         this.ucAdmin_pro.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.ucAdmin_pro.Location = new System.Drawing.Point(0, 0);

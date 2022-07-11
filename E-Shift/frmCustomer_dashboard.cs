@@ -16,10 +16,10 @@ namespace E_Shift
         private ucCus_profile usrProfile;
         private ucCustomer_Dashboard cus_Dashboard;
 
-        public frmCustomer_dashboard()
+        public frmCustomer_dashboard(string username)
         {
             InitializeComponent();
-            //lblUsr.Text = username; string username
+            lblUsr.Text = username; 
         }
 
         internal void togglePanelMain(string panelname)
@@ -30,7 +30,7 @@ namespace E_Shift
                 case "customer_Profile":
                     if (this.usrProfile == null)
                     {
-                        this.usrProfile = new ucCus_profile();
+                        this.usrProfile = new ucCus_profile(lblUsr.Text);
                         this.pnl_Main.Controls.Add(usrProfile);
                         this.usrProfile.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.usrProfile.Location = new System.Drawing.Point(0, 0);

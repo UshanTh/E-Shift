@@ -13,7 +13,7 @@ namespace E_Shift
     public partial class frmcCustomer_login : Form
     {
         DBase_Cls DB = new DBase_Cls(); // Class object
-        string user_Status = "Approved";
+        //string user_Status = "Approved";
 
         public frmcCustomer_login()
         {
@@ -27,34 +27,41 @@ namespace E_Shift
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            try
+            if (txtUsrname.Text == "" || txtPwd.Text == "")
             {
-                DB.openConnection(); // open database connection
-                //DB.login("Select Cus_Username,Cus_Password from customer where Cus_Username= '" + txtUsrname.Text + "' and Cus_Password= '" + txtPwd.Text + "' or Cus_Status = '" + user_Status + "'");
-                DB.login("Select Cus_Username,Cus_Password from customer where Cus_Username= '" + txtUsrname.Text + "' and Cus_Password= '" + txtPwd.Text + "'");
-                if (DB.Dtable.Rows.Count == 1) //when query find the matched username and password
+                MessageBox.Show("Please enter all fields", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
                 {
-                    //show welcome message box
-                    MessageBox.Show("Welcome to E-Shift", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide(); //close login form
-                    //frmCustomer_dashboard fcus_dash = new frmCustomer_dashboard(txtUsrname.Text); //create object
-                    //fcus_dash.Show(); //show customer dashboard form
+                    DB.openConnection(); // open database connection
+                    //DB.login("Select Cus_Username,Cus_Password from customer where Cus_Username= '" + txtUsrname.Text + "' and Cus_Password= '" + txtPwd.Text + "' or Cus_Status = '" + user_Status + "'");
+                    DB.login("Select Cus_Username,Cus_Password from customer where Cus_Username= '" + txtUsrname.Text + "' and Cus_Password= '" + txtPwd.Text + "'");
+                    if (DB.Dtable.Rows.Count == 1) //when query find the matched username and password
+                    {
+                        //show welcome message box
+                        MessageBox.Show("Welcome to E-Shift", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide(); //close login form
+                        frmCustomer_dashboard fcus_dash = new frmCustomer_dashboard(txtUsrname.Text); //create object
+                        fcus_dash.Show(); //show customer dashboard form
+                    }
+                    else
+                    {
+                        //show welcome message box
+                        MessageBox.Show("Incorrect Username or Password", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else 
+                catch (Exception ex) //catch error in database 
                 {
-                    //show welcome message box
-                    MessageBox.Show("Incorrect Username or Password", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //show the error message
+                    MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            catch (Exception ex) //catch error in database 
-            {
-                //show the error message
-                MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                DB.closeConnection(); // close sql connection
-            }
+                finally
+                {
+                    DB.closeConnection(); // close sql connection
+                }
+            }       
         }
 
         private void joinLbl_Click(object sender, EventArgs e)

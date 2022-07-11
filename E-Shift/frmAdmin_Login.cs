@@ -21,33 +21,48 @@ namespace E_Shift
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            try
+            if (txtUsrname.Text == "" || txtPwd.Text == "")
             {
-                DB.openConnection(); // open database connection
-                //Check admin usernam & Password 
-                DB.login("Select Cus_Username,Cus_Password from customer where Cus_Username= '" + txtUsrname.Text + "' and Cus_Password= '" + txtPwd.Text + "'");
-                if (DB.Dtable.Rows.Count == 1) //when query find the matched username and password
+                MessageBox.Show("Please enter all fields", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
                 {
-                    //show welcome message box
-                    MessageBox.Show("Welcome to E-Shift", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide(); //close login form
-                    //frmCustomer_dashboard fcus_dash = new frmCustomer_dashboard(txtUsrname.Text); //create object
-                    //fcus_dash.Show(); //show customer dashboard form
+                    DB.openConnection(); // open database connection
+                    DB.login("Select Admin_Username,Admin_Password from Admin where Admin_Username= '" + txtUsrname.Text + "' and Admin_Password= '" + txtPwd.Text + "'");
+                    if (DB.Dtable.Rows.Count == 1) //when query find the matched username and password
+                    {
+                        //show welcome message box
+                        MessageBox.Show("Welcome to E-Shift", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide(); //close login form
+                        frmAdmin_dashboard fAdmin_dash = new frmAdmin_dashboard(txtUsrname.Text); //create object
+                        fAdmin_dash.Show(); //show customer dashboard form
+                    }
+                    else
+                    {
+                        //show welcome message box
+                        MessageBox.Show("Incorrect Username or Password", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
+                catch (Exception ex) //catch error in database 
                 {
-                    //show welcome message box
-                    MessageBox.Show("Incorrect Username or Password", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //show the error message
+                    MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    DB.closeConnection(); // close sql connection
                 }
             }
-            catch (Exception ex) //catch error in database 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            //check user want to cancel this application using message box buttons
+            if (MessageBox.Show("Are you sure to exit this application", "E-Shift", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                //show the error message
-                MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                DB.closeConnection(); // close sql connection
+                Application.Exit(); // if user click ok close apllication
             }
         }
     }

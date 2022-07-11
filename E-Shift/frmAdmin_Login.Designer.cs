@@ -53,6 +53,7 @@
             this.btnExit.TabIndex = 18;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // apendingoneLbl
             // 
@@ -64,7 +65,6 @@
             this.apendingoneLbl.Size = new System.Drawing.Size(281, 29);
             this.apendingoneLbl.TabIndex = 23;
             this.apendingoneLbl.Text = "Authorized Users Only";
-            this.apendingoneLbl.Visible = false;
             // 
             // txtPwd
             // 

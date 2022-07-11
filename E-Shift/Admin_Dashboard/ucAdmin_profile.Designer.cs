@@ -32,21 +32,17 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.txtConfirmpwd = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtZipcode = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtLname = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtFname = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txtFullname = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -63,111 +59,87 @@
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
             this.btnConfirm.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnConfirm.Location = new System.Drawing.Point(714, 601);
+            this.btnConfirm.Location = new System.Drawing.Point(720, 557);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(417, 81);
-            this.btnConfirm.TabIndex = 51;
+            this.btnConfirm.TabIndex = 7;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // txtConfirmpwd
             // 
             this.txtConfirmpwd.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtConfirmpwd.Location = new System.Drawing.Point(714, 502);
+            this.txtConfirmpwd.Location = new System.Drawing.Point(720, 433);
             this.txtConfirmpwd.Name = "txtConfirmpwd";
             this.txtConfirmpwd.Size = new System.Drawing.Size(417, 31);
-            this.txtConfirmpwd.TabIndex = 49;
+            this.txtConfirmpwd.TabIndex = 5;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(710, 462);
+            this.label11.Location = new System.Drawing.Point(720, 393);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(173, 24);
             this.label11.TabIndex = 60;
             this.label11.Text = "Confirm Password";
             // 
-            // txtZipcode
-            // 
-            this.txtZipcode.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtZipcode.Location = new System.Drawing.Point(714, 403);
-            this.txtZipcode.Name = "txtZipcode";
-            this.txtZipcode.Size = new System.Drawing.Size(417, 31);
-            this.txtZipcode.TabIndex = 47;
-            // 
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtAddress.Location = new System.Drawing.Point(84, 601);
+            this.txtAddress.Location = new System.Drawing.Point(84, 557);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(535, 81);
-            this.txtAddress.TabIndex = 50;
+            this.txtAddress.TabIndex = 6;
             // 
             // txtPwd
             // 
             this.txtPwd.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtPwd.Location = new System.Drawing.Point(84, 502);
+            this.txtPwd.Location = new System.Drawing.Point(84, 433);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(417, 31);
-            this.txtPwd.TabIndex = 48;
+            this.txtPwd.TabIndex = 4;
             // 
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtPhone.Location = new System.Drawing.Point(714, 304);
+            this.txtPhone.Location = new System.Drawing.Point(720, 205);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(417, 31);
-            this.txtPhone.TabIndex = 45;
-            // 
-            // txtLname
-            // 
-            this.txtLname.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtLname.Location = new System.Drawing.Point(714, 205);
-            this.txtLname.Name = "txtLname";
-            this.txtLname.Size = new System.Drawing.Size(417, 31);
-            this.txtLname.TabIndex = 42;
+            this.txtPhone.TabIndex = 1;
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtUsername.Location = new System.Drawing.Point(84, 403);
+            this.txtUsername.Location = new System.Drawing.Point(84, 314);
             this.txtUsername.Name = "txtUsername";
+            this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(417, 31);
-            this.txtUsername.TabIndex = 46;
+            this.txtUsername.TabIndex = 2;
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtEmail.Location = new System.Drawing.Point(84, 304);
+            this.txtEmail.Location = new System.Drawing.Point(720, 314);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(417, 31);
-            this.txtEmail.TabIndex = 43;
+            this.txtEmail.TabIndex = 3;
             // 
-            // txtFname
+            // txtFullname
             // 
-            this.txtFname.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtFname.Location = new System.Drawing.Point(84, 205);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(417, 31);
-            this.txtFname.TabIndex = 41;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(710, 366);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 24);
-            this.label9.TabIndex = 59;
-            this.label9.Text = "Zip-code";
+            this.txtFullname.Font = new System.Drawing.Font("Helvetica", 12F);
+            this.txtFullname.Location = new System.Drawing.Point(84, 205);
+            this.txtFullname.Name = "txtFullname";
+            this.txtFullname.Size = new System.Drawing.Size(417, 31);
+            this.txtFullname.TabIndex = 0;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(80, 563);
+            this.label8.Location = new System.Drawing.Point(84, 519);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 24);
             this.label8.TabIndex = 58;
@@ -177,7 +149,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(80, 462);
+            this.label7.Location = new System.Drawing.Point(84, 393);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 24);
             this.label7.TabIndex = 57;
@@ -187,7 +159,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(80, 366);
+            this.label6.Location = new System.Drawing.Point(84, 277);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 24);
             this.label6.TabIndex = 56;
@@ -197,7 +169,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(710, 267);
+            this.label5.Location = new System.Drawing.Point(720, 166);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 24);
             this.label5.TabIndex = 55;
@@ -207,31 +179,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(80, 267);
+            this.label4.Location = new System.Drawing.Point(720, 277);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 24);
             this.label4.TabIndex = 53;
             this.label4.Text = "Email";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(710, 166);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 24);
-            this.label3.TabIndex = 54;
-            this.label3.Text = "Last Name";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(80, 166);
+            this.label2.Location = new System.Drawing.Point(84, 166);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 24);
+            this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 52;
-            this.label2.Text = "First Name";
+            this.label2.Text = "Full Name";
             // 
             // label1
             // 
@@ -251,25 +213,22 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtConfirmpwd);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtZipcode);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtLname);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtFname);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtFullname);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ucAdmin_profile";
             this.Size = new System.Drawing.Size(1242, 748);
+            this.Load += new System.EventHandler(this.ucAdmin_profile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,21 +240,17 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.TextBox txtConfirmpwd;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtZipcode;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtLname;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtFname;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtFullname;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
