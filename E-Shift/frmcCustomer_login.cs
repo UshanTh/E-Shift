@@ -13,7 +13,7 @@ namespace E_Shift
     public partial class frmcCustomer_login : Form
     {
         DBase_Cls DB = new DBase_Cls(); // Class object
-        //string user_Status = "Approved";
+        string user_Type;
 
         public frmcCustomer_login()
         {
@@ -22,45 +22,103 @@ namespace E_Shift
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+           
         }
 
+        //private void approved_User()
+        //{
+        //    try
+        //    {
+        //        DB.openConnection();
+        //        DB.login("select customer.Cus_Username, customer.Cus_Password, customer.Cus_Status from customer where customer.Cus_Username = '" + txtUsrname.Text + "'  and customer.Cus_Password ='" + txtPwd.Text + "'  and customer.Cus_Status = '"+user_Status+"'");
+        //        if (DB.Dtable.Rows.Count == 1) //when query find the matched username and password
+        //        {
+        //            MessageBox.Show("Welcome to E-Shift", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Incorrect Password and username", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    finally
+        //    {
+        //        DB.closeConnection();
+        //    }
+        //}
+
+        private void check_user_Status()
+        {
+            try
+            {
+                DB.openConnection();
+                //check customer status approved or not
+                System.Data.SqlClient.SqlDataReader dr = DB.readRecord("Select * from customer where Cus_Username = '" + txtUsrname.Text + "' and Cus_Password = '"+txtPwd.Text+"'");
+                while (dr.Read())
+                {
+                    user_Type = dr[8].ToString(); //status assign to variable
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                DB.closeConnection();
+            }
+        }
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            if (txtUsrname.Text == "" || txtPwd.Text == "")
+            if (txtUsrname.Text == "" || txtPwd.Text == "") // check username & password null
             {
+                //then show error message
                 MessageBox.Show("Please enter all fields", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                try
+               check_user_Status(); //invoke check customer status method
+
+               if (user_Type == "Approved") // if customer status equal to approved
                 {
-                    DB.openConnection(); // open database connection
-                    //DB.login("Select Cus_Username,Cus_Password from customer where Cus_Username= '" + txtUsrname.Text + "' and Cus_Password= '" + txtPwd.Text + "' or Cus_Status = '" + user_Status + "'");
-                    DB.login("Select Cus_Username,Cus_Password from customer where Cus_Username= '" + txtUsrname.Text + "' and Cus_Password= '" + txtPwd.Text + "'");
-                    if (DB.Dtable.Rows.Count == 1) //when query find the matched username and password
+                    try
                     {
-                        //show welcome message box
-                        MessageBox.Show("Welcome to E-Shift", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide(); //close login form
-                        frmCustomer_dashboard fcus_dash = new frmCustomer_dashboard(txtUsrname.Text); //create object
-                        fcus_dash.Show(); //show customer dashboard form
+                        //then check his username and password
+                        DB.login("Select Cus_Username,Cus_Password from customer where Cus_Username= '" + txtUsrname.Text + "' and Cus_Password= '" + txtPwd.Text + "'");
+                        if (DB.Dtable.Rows.Count == 1) //when query find the matched username and password
+                        {
+                            //show welcome message box
+                            MessageBox.Show("Welcome to E-Shift", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //this.Hide(); //close login form
+                            //frmCustomer_dashboard fcus_dash = new frmCustomer_dashboard(txtUsrname.Text); //create object
+                            //fcus_dash.Show(); //show customer dashboard form
+                        }
+                        else
+                        {
+                            //show Error message box
+                            MessageBox.Show("Incorrect Username or Password", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
-                    else
+                    catch (Exception ex) //catch error in database 
                     {
-                        //show welcome message box
-                        MessageBox.Show("Incorrect Username or Password", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //show the error message
+                        MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    finally
+                    {
+                        DB.closeConnection(); // close sql connection
+                    }                  
                 }
-                catch (Exception ex) //catch error in database 
+               else
                 {
-                    //show the error message
-                    MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // customer status approved show message box
+                    MessageBox.Show("Wait For Your Approval", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    user_Type = null;
                 }
-                finally
-                {
-                    DB.closeConnection(); // close sql connection
-                }
+
             }       
         }
 
