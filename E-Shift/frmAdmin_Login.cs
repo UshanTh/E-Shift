@@ -59,7 +59,7 @@ namespace E_Shift
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            //check user want to cancel this application using message box buttons
+            //check user want to exit this application using message box buttons
             if (MessageBox.Show("Are you sure to exit this application", "E-Shift", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 Application.Exit(); // if user click ok close apllication

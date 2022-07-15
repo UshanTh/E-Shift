@@ -15,6 +15,8 @@ namespace E_Shift
     {
         private ucCus_profile usrProfile;
         private ucCustomer_Dashboard cus_Dashboard;
+        private ucJobs myJobs;
+        private ucProducts myProducts;
 
         public frmCustomer_dashboard(string username)
         {
@@ -45,7 +47,7 @@ namespace E_Shift
                 case "customer_Dashboard":
                     if (this.cus_Dashboard == null)
                     {
-                        this.cus_Dashboard = new ucCustomer_Dashboard();
+                        this.cus_Dashboard = new ucCustomer_Dashboard(lblUsr.Text);
                         this.pnl_Main.Controls.Add(cus_Dashboard);
                         this.cus_Dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.cus_Dashboard.Location = new System.Drawing.Point(0, 0);
@@ -55,6 +57,36 @@ namespace E_Shift
                     else
                     {
                         this.pnl_Main.Controls.Add(cus_Dashboard);
+                    }
+                    break;
+                case "My Jobs":
+                    if (this.myJobs == null)
+                    {
+                        this.myJobs = new ucJobs(lblUsr.Text);
+                        this.pnl_Main.Controls.Add(myJobs);
+                        this.myJobs.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.myJobs.Location = new System.Drawing.Point(0, 0);
+                        this.myJobs.Name = "My Jobs";
+                        this.myJobs.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.pnl_Main.Controls.Add(myJobs);
+                    }
+                    break;
+                case "My Products":
+                    if (this.myProducts == null)
+                    {
+                        this.myProducts = new ucProducts();
+                        this.pnl_Main.Controls.Add(myProducts);
+                        this.myProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.myProducts.Location = new System.Drawing.Point(0, 0);
+                        this.myProducts.Name = "My Products";
+                        this.myProducts.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.pnl_Main.Controls.Add(myProducts);
                     }
                     break;
                 default:
@@ -68,12 +100,38 @@ namespace E_Shift
 
         private void frmCustomer_dashboard_Load(object sender, EventArgs e)
         {
-            this.togglePanelMain("customer_Dashboard");
+            //this.togglePanelMain("customer_Dashboard");
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             this.togglePanelMain("customer_Dashboard");
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            //check user want to cancel this application using message box buttons
+            if (MessageBox.Show("Are You Sure To Logout This Application", "E-Shift", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Hide();
+                frmcCustomer_login fcus_login = new frmcCustomer_login();
+                fcus_login.Show();
+            }
+        }
+
+        private void btnJobs_Click(object sender, EventArgs e)
+        {
+            this.togglePanelMain("My Jobs");
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            this.togglePanelMain("My Products");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

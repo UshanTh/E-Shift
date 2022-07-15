@@ -39,8 +39,6 @@
             this.frgtPwdlbl = new System.Windows.Forms.Label();
             this.joinLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.apendingoneLbl = new System.Windows.Forms.Label();
-            this.apendingtwoLbl = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -151,30 +149,6 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Don\'t have an account yet?";
             // 
-            // apendingoneLbl
-            // 
-            this.apendingoneLbl.AutoSize = true;
-            this.apendingoneLbl.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apendingoneLbl.ForeColor = System.Drawing.Color.Red;
-            this.apendingoneLbl.Location = new System.Drawing.Point(191, 595);
-            this.apendingoneLbl.Name = "apendingoneLbl";
-            this.apendingoneLbl.Size = new System.Drawing.Size(224, 24);
-            this.apendingoneLbl.TabIndex = 10;
-            this.apendingoneLbl.Text = "Admin approval pending";
-            this.apendingoneLbl.Visible = false;
-            // 
-            // apendingtwoLbl
-            // 
-            this.apendingtwoLbl.AutoSize = true;
-            this.apendingtwoLbl.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apendingtwoLbl.ForeColor = System.Drawing.Color.Red;
-            this.apendingtwoLbl.Location = new System.Drawing.Point(160, 625);
-            this.apendingtwoLbl.Name = "apendingtwoLbl";
-            this.apendingtwoLbl.Size = new System.Drawing.Size(284, 24);
-            this.apendingtwoLbl.TabIndex = 11;
-            this.apendingtwoLbl.Text = "It will send within 24h via Email";
-            this.apendingtwoLbl.Visible = false;
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -188,15 +162,13 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // frmLogin
+            // frmcCustomer_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.apendingtwoLbl);
-            this.Controls.Add(this.apendingoneLbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.joinLbl);
             this.Controls.Add(this.frgtPwdlbl);
@@ -209,7 +181,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmLogin";
+            this.Name = "frmcCustomer_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
             this.Load += new System.EventHandler(this.frmLogin_Load);
@@ -232,8 +204,6 @@
         private System.Windows.Forms.Label frgtPwdlbl;
         private System.Windows.Forms.Label joinLbl;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label apendingoneLbl;
-        private System.Windows.Forms.Label apendingtwoLbl;
         private System.Windows.Forms.Button btnExit;
     }
 }

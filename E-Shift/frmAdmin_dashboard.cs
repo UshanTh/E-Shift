@@ -19,6 +19,9 @@ namespace E_Shift
         private ucDriver_details ucDriver_info;
         private ucProducts ucProducts;
         private ucJob_details ucJob_info;
+        private ucUnit ucUnit_info;
+        private ucLoad ucLoad_info;
+        private ucLorry ucLorry_info;
 
         public frmAdmin_dashboard(string username)
         {
@@ -121,6 +124,51 @@ namespace E_Shift
                         this.pnl_Main.Controls.Add(ucProducts);
                     }
                     break;
+                case "Unit Details":
+                    if (this.ucUnit_info == null)
+                    {
+                        this.ucUnit_info = new ucUnit();
+                        this.pnl_Main.Controls.Add(ucUnit_info);
+                        this.ucUnit_info.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.ucUnit_info.Location = new System.Drawing.Point(0, 0);
+                        this.ucUnit_info.Name = "Unit Details";
+                        this.ucUnit_info.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.pnl_Main.Controls.Add(ucUnit_info);
+                    }
+                    break;
+                case "Load Details":
+                    if (this.ucLoad_info == null) 
+                    {
+                        this.ucLoad_info = new ucLoad();
+                        this.pnl_Main.Controls.Add(ucLoad_info);
+                        this.ucLoad_info.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.ucLoad_info.Location = new System.Drawing.Point(0, 0);
+                        this.ucLoad_info.Name = "Load Details";
+                        this.ucLoad_info.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.pnl_Main.Controls.Add(ucLoad_info);
+                    }
+                    break;
+                case "Lorry Details":
+                    if (this.ucLorry_info == null)
+                    {
+                        this.ucLorry_info = new ucLorry();
+                        this.pnl_Main.Controls.Add(ucLorry_info);
+                        this.ucLorry_info.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.ucLorry_info.Location = new System.Drawing.Point(0, 0);
+                        this.ucLorry_info.Name = "Lorry Details";
+                        this.ucLorry_info.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.pnl_Main.Controls.Add(ucLorry_info);
+                    }
+                    break;
                 default:
                     break;
             }
@@ -154,6 +202,32 @@ namespace E_Shift
         private void btnProfile_Click(object sender, EventArgs e)
         {
             this.togglePanelMain("Admin Profile");
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            //check user want to exit this application using message box buttons
+            if (MessageBox.Show("Are You Sure To Logout This Application", "E-Shift", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                this.Hide();
+                frmAdmin_Login fadmin_login = new frmAdmin_Login();
+                fadmin_login.Show();
+            }
+        }
+
+        private void btnUnit_Click(object sender, EventArgs e)
+        {
+            this.togglePanelMain("Unit Details");
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            this.togglePanelMain("Load Details");
+        }
+
+        private void btnLorry_Click(object sender, EventArgs e)
+        {
+            this.togglePanelMain("Lorry Details");
         }
     }
 }

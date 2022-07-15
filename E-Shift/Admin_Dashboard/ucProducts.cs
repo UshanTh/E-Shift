@@ -37,7 +37,7 @@ namespace E_Shift.Admin_Dashboard
                     //insert record to database
                     DB.queryingRecord("insert into Products values('" + txtProName.Text + "', '" + cmbProduct_type.Text + "','" + txtDesc.Text + "', '" + txtCustomerId.Text + "')");
                     //showing message box
-                    MessageBox.Show("Successfully Registered", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully Registered..Please assign to Load", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear_Textbox(); //invoke clear textbox method
                     itemlaod(); //invoke refresh datagrid view
                 }
@@ -214,7 +214,16 @@ namespace E_Shift.Admin_Dashboard
             {
                 DB.closeConnection();
             }
-            
+        }
+
+        private void btnAssign_Click(object sender, EventArgs e)
+        {
+            AssingJOBID frmassingJOB = new AssingJOBID();
+            frmassingJOB.Show();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
 
         }
     }

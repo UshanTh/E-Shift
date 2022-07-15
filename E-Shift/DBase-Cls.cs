@@ -17,8 +17,7 @@ namespace E_Shift
         SqlDataAdapter sda;
         public DataTable Dtable;
         public DataSet ds;
-        public SqlCommandBuilder scb;
-        //public SqlException SqlException;
+        //public SqlCommandBuilder scb;
         public string password;
         public string confirm_Password;
         String sql;

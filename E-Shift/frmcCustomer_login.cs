@@ -25,31 +25,6 @@ namespace E_Shift
            
         }
 
-        //private void approved_User()
-        //{
-        //    try
-        //    {
-        //        DB.openConnection();
-        //        DB.login("select customer.Cus_Username, customer.Cus_Password, customer.Cus_Status from customer where customer.Cus_Username = '" + txtUsrname.Text + "'  and customer.Cus_Password ='" + txtPwd.Text + "'  and customer.Cus_Status = '"+user_Status+"'");
-        //        if (DB.Dtable.Rows.Count == 1) //when query find the matched username and password
-        //        {
-        //            MessageBox.Show("Welcome to E-Shift", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Incorrect Password and username", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    finally
-        //    {
-        //        DB.closeConnection();
-        //    }
-        //}
-
         private void check_user_Status()
         {
             try
@@ -92,14 +67,16 @@ namespace E_Shift
                         {
                             //show welcome message box
                             MessageBox.Show("Welcome to E-Shift", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //this.Hide(); //close login form
-                            //frmCustomer_dashboard fcus_dash = new frmCustomer_dashboard(txtUsrname.Text); //create object
-                            //fcus_dash.Show(); //show customer dashboard form
+                            check_user_Status();
+                            this.Hide(); //close login form
+                            frmCustomer_dashboard fcus_dash = new frmCustomer_dashboard(txtUsrname.Text); //pass username to dashboard
+                            fcus_dash.Show(); //show customer dashboard form
                         }
                         else
                         {
                             //show Error message box
                             MessageBox.Show("Incorrect Username or Password", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            check_user_Status();
                         }
                     }
                     catch (Exception ex) //catch error in database 
@@ -112,11 +89,15 @@ namespace E_Shift
                         DB.closeConnection(); // close sql connection
                     }                  
                 }
-               else
+               else if (user_Type == "Pending")
                 {
-                    // customer status approved show message box
                     MessageBox.Show("Wait For Your Approval", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     user_Type = null;
+                }
+                else
+                {
+                    check_user_Status();
+                    MessageBox.Show("User Not Found.. Try Again", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }       

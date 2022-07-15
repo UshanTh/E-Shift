@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Dashboard\AssingJOBID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\AssingJOBID.Designer.cs">
+      <DependentUpon>AssingJOBID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Dashboard\ucAdmin_dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="Admin_Dashboard\ucAdmin_profile.Designer.cs">
       <DependentUpon>ucAdmin_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucAssistant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucAssistant.Designer.cs">
+      <DependentUpon>ucAssistant.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin_Dashboard\ucCustomer_details.cs">
       <SubType>UserControl</SubType>
@@ -76,11 +88,35 @@
     <Compile Include="Admin_Dashboard\ucJob_details.Designer.cs">
       <DependentUpon>ucJob_details.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Dashboard\ucLoad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucLoad.Designer.cs">
+      <DependentUpon>ucLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucLorry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucLorry.Designer.cs">
+      <DependentUpon>ucLorry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Dashboard\ucProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Admin_Dashboard\ucProducts.Designer.cs">
       <DependentUpon>ucProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucUnit.Designer.cs">
+      <DependentUpon>ucUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucUnit_Details.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\ucUnit_Details.Designer.cs">
+      <DependentUpon>ucUnit_Details.cs</DependentUpon>
     </Compile>
     <Compile Include="Cus_Dashboard\ucCustomer_Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -93,6 +129,18 @@
     </Compile>
     <Compile Include="Cus_Dashboard\ucCus_profile.Designer.cs">
       <DependentUpon>ucCus_profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cus_Dashboard\ucJobs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cus_Dashboard\ucJobs.Designer.cs">
+      <DependentUpon>ucJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cus_Dashboard\ucProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cus_Dashboard\ucProducts.Designer.cs">
+      <DependentUpon>ucProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="DBase-Cls.cs" />
     <Compile Include="frmAdmin_dashboard.cs">
@@ -127,8 +175,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin_Dashboard\AssingJOBID.resx">
+      <DependentUpon>AssingJOBID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\ucAdmin_dashboard.resx">
+      <DependentUpon>ucAdmin_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_Dashboard\ucAdmin_profile.resx">
       <DependentUpon>ucAdmin_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\ucAssistant.resx">
+      <DependentUpon>ucAssistant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_Dashboard\ucCustomer_details.resx">
       <DependentUpon>ucCustomer_details.cs</DependentUpon>
@@ -136,14 +193,32 @@
     <EmbeddedResource Include="Admin_Dashboard\ucDriver_details.resx">
       <DependentUpon>ucDriver_details.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\ucJob_details.resx">
+      <DependentUpon>ucJob_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\ucLoad.resx">
+      <DependentUpon>ucLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\ucLorry.resx">
+      <DependentUpon>ucLorry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_Dashboard\ucProducts.resx">
       <DependentUpon>ucProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\ucUnit.resx">
+      <DependentUpon>ucUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\ucUnit_Details.resx">
+      <DependentUpon>ucUnit_Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cus_Dashboard\ucCustomer_Dashboard.resx">
       <DependentUpon>ucCustomer_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cus_Dashboard\ucCus_profile.resx">
       <DependentUpon>ucCus_profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cus_Dashboard\ucJobs.resx">
+      <DependentUpon>ucJobs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin_dashboard.resx">
       <DependentUpon>frmAdmin_dashboard.cs</DependentUpon>
