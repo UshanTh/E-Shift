@@ -102,9 +102,13 @@ namespace E_Shift.Admin_Dashboard
                 try
                 {
                     DB.openConnection();
-                    DB.queryingRecord("update customer set Cus_Status= '" + cmbCus_Status.Text + "'");
-                    MessageBox.Show("Update Successfully ", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DB.queryingRecord("update customer set Cus_Status= '" + cmbCus_Status.Text + "' where Cus_ID = '"+txtCus_ID.Text+"'");
+                    MessageBox.Show("Update Successfully ", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Customer_Tblaod(); //invoke customer table load method
+                    //clear textbox after update
+                    cmbCus_Status.SelectedValue = -1;
+                    txtCus_ID.ResetText();
+                    txtFname.ResetText();
                 }
                 catch (Exception ex)
                 {

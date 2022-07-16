@@ -130,6 +130,7 @@
             this.txtCus_ID.Font = new System.Drawing.Font("Helvetica", 12F);
             this.txtCus_ID.Location = new System.Drawing.Point(379, 206);
             this.txtCus_ID.Name = "txtCus_ID";
+            this.txtCus_ID.ReadOnly = true;
             this.txtCus_ID.Size = new System.Drawing.Size(250, 31);
             this.txtCus_ID.TabIndex = 135;
             // 

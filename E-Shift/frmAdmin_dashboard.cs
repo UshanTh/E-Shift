@@ -22,6 +22,7 @@ namespace E_Shift
         private ucUnit ucUnit_info;
         private ucLoad ucLoad_info;
         private ucLorry ucLorry_info;
+        private ucAssistant ucAssistant_info;
 
         public frmAdmin_dashboard(string username)
         {
@@ -169,6 +170,21 @@ namespace E_Shift
                         this.pnl_Main.Controls.Add(ucLorry_info);
                     }
                     break;
+                case "Assistant Details":
+                    if (this.ucAssistant_info == null)
+                    {
+                        this.ucAssistant_info = new ucAssistant();
+                        this.pnl_Main.Controls.Add(ucAssistant_info);
+                        this.ucAssistant_info.Dock = System.Windows.Forms.DockStyle.Fill;
+                        this.ucAssistant_info.Location = new System.Drawing.Point(0, 0);
+                        this.ucAssistant_info.Name = "Assistant Details";
+                        this.ucAssistant_info.TabIndex = 0;
+                    }
+                    else
+                    {
+                        this.pnl_Main.Controls.Add(ucAssistant_info);
+                    }
+                    break;
                 default:
                     break;
             }
@@ -228,6 +244,11 @@ namespace E_Shift
         private void btnLorry_Click(object sender, EventArgs e)
         {
             this.togglePanelMain("Lorry Details");
+        }
+
+        private void btnAssistant_Click(object sender, EventArgs e)
+        {
+            this.togglePanelMain("Assistant Details");
         }
     }
 }

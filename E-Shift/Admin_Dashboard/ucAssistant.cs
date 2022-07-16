@@ -126,7 +126,7 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection(); //open sql connection
                     //delete record in driver table
-                    DB.queryingRecord("Delete from Assistant where Assistan_ID='" + txtAid.Text + "'");
+                    DB.queryingRecord("Delete from Assistant where Assistant_ID='" + txtAid.Text + "'");
                     //showing message box
                     MessageBox.Show("Delete Successfully", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear_Textbox();//invoke clear textbox method
@@ -140,6 +140,38 @@ namespace E_Shift.Admin_Dashboard
                 finally
                 {
                     DB.closeConnection(); //close sql connection
+                }
+            }
+        }
+
+        private void btnFInd_Click(object sender, EventArgs e)
+        {
+            if (txtAid.Text == "")
+            {
+                MessageBox.Show("Please enter Assistant id", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    DB.openConnection();
+                    //search record in customer table using customer username
+                    System.Data.SqlClient.SqlDataReader dr = DB.readRecord("Select * from Assistant where Assistant_ID='" + txtAid.Text + "'");
+                    while (dr.Read())
+                    {
+                        txtFname.Text = dr[1].ToString();
+                        txtEmail.Text = dr[2].ToString();
+                        txtPhone.Text = dr[3].ToString();
+                        txtAddress.Text = dr[4].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                finally
+                {
+                    DB.closeConnection();
                 }
             }
         }

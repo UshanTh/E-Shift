@@ -29,7 +29,7 @@ namespace E_Shift.Admin_Dashboard
                 //if not show a warning message
                 MessageBox.Show("Please Enter All Fileds", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else //if all details are filled
+            else //or else all are filled
             {
                 try
                 {
@@ -157,10 +157,6 @@ namespace E_Shift.Admin_Dashboard
                     DB.closeConnection(); //close connection
                 }
             }
-            else
-            {
-                MessageBox.Show("No Records Found", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             
         }
 
@@ -172,22 +168,31 @@ namespace E_Shift.Admin_Dashboard
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if(txtID.Text == "") // if ID null
             {
-                DB.openConnection();
-                DB.queryingRecord("update Products set Pro_name='" + txtProName.Text + "',Pro_type='" + cmbProduct_type.Text + "', Pro_desc='" + txtDesc.Text + "',Cus_ID='" + txtCustomerId.Text + "' where Pro_ID = '" + txtID.Text + "'");
-                MessageBox.Show("Successfully Updated", "Ayubo Drive", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                itemlaod(); //refresh after update the table
+                //show message please enter id
+                MessageBox.Show("Please Enter Product ID", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else //if not
             {
-                //show error message with exception
-                MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                DB.closeConnection();
-            }
+                try
+                {
+                    DB.openConnection();
+                    //update products details using product id
+                    DB.queryingRecord("update Products set Pro_name='" + txtProName.Text + "',Pro_type='" + cmbProduct_type.Text + "', Pro_desc='" + txtDesc.Text + "',Cus_ID='" + txtCustomerId.Text + "' where Pro_ID = '" + txtID.Text + "'");
+                    MessageBox.Show("Successfully Updated", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    itemlaod(); //refresh after update the table
+                }
+                catch (Exception ex)
+                {
+                    //show error message with exception
+                    MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                finally
+                {
+                    DB.closeConnection();
+                }
+            }       
         }
 
         //datagrid view cell clieck event
@@ -224,7 +229,31 @@ namespace E_Shift.Admin_Dashboard
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if (txtID.Text == "") // if ID null
+            {
+                //show message please enter id
+                MessageBox.Show("Please Enter Product ID", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else //if not
+            {
+                try
+                {
+                    DB.openConnection();
+                    //update products details using product id
+                    DB.queryingRecord("delete * from Products where Pro_ID = '" + txtID.Text + "'");
+                    MessageBox.Show("Successfully Deleted", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    itemlaod(); //refresh after update the table
+                }
+                catch (Exception ex)
+                {
+                    //show error message with exception
+                    MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                finally
+                {
+                    DB.closeConnection();
+                }
+            }
         }
     }
 } 

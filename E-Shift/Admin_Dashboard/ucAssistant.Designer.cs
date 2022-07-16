@@ -95,6 +95,7 @@
             this.btnFInd.TabIndex = 131;
             this.btnFInd.Text = "Search";
             this.btnFInd.UseVisualStyleBackColor = false;
+            this.btnFInd.Click += new System.EventHandler(this.btnFInd_Click);
             // 
             // txtAid
             // 

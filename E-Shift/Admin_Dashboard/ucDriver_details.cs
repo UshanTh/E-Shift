@@ -168,5 +168,10 @@ namespace E_Shift.Admin_Dashboard
                 }
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear_Textbox();
+        }
     }
 }

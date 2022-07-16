@@ -199,7 +199,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
             this.btnSave.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnSave.Location = new System.Drawing.Point(847, 640);
+            this.btnSave.Location = new System.Drawing.Point(829, 640);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(141, 60);
             this.btnSave.TabIndex = 87;
@@ -211,7 +211,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
             this.btnDelete.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnDelete.Location = new System.Drawing.Point(1023, 640);
+            this.btnDelete.Location = new System.Drawing.Point(1022, 640);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(141, 60);
             this.btnDelete.TabIndex = 88;
@@ -246,12 +246,13 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
             this.btnClear.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnClear.Location = new System.Drawing.Point(639, 640);
+            this.btnClear.Location = new System.Drawing.Point(636, 640);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(141, 60);
             this.btnClear.TabIndex = 113;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtLID
             // 

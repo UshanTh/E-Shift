@@ -139,7 +139,8 @@
             this.cmbProduct_type.Items.AddRange(new object[] {
             "Furniture",
             "Appliances",
-            "Electronic Equipment"});
+            "Electronic Equipment",
+            "Storage and Organizational Items"});
             this.cmbProduct_type.Location = new System.Drawing.Point(50, 464);
             this.cmbProduct_type.Name = "cmbProduct_type";
             this.cmbProduct_type.Size = new System.Drawing.Size(417, 32);

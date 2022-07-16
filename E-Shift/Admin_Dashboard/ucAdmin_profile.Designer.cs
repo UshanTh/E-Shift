@@ -72,6 +72,7 @@
             this.txtConfirmpwd.Font = new System.Drawing.Font("Helvetica", 12F);
             this.txtConfirmpwd.Location = new System.Drawing.Point(720, 433);
             this.txtConfirmpwd.Name = "txtConfirmpwd";
+            this.txtConfirmpwd.PasswordChar = '*';
             this.txtConfirmpwd.Size = new System.Drawing.Size(417, 31);
             this.txtConfirmpwd.TabIndex = 5;
             // 
@@ -99,6 +100,7 @@
             this.txtPwd.Font = new System.Drawing.Font("Helvetica", 12F);
             this.txtPwd.Location = new System.Drawing.Point(84, 433);
             this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(417, 31);
             this.txtPwd.TabIndex = 4;
             // 
