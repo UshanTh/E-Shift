@@ -26,6 +26,7 @@ namespace E_Shift.Admin_Dashboard
             txtEmail.ResetText();
             txtAddress.ResetText();
             txtPhone.ResetText();
+            txtUnitID.ResetText();
         }
 
         private void assistant_load() //load Driver table records
@@ -49,7 +50,7 @@ namespace E_Shift.Admin_Dashboard
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtFname.Text == "" || txtEmail.Text == "" || txtPhone.Text == "" || txtAddress.Text == "" )
+            if (txtFname.Text == "" || txtEmail.Text == "" || txtPhone.Text == "" || txtAddress.Text == "" || txtUnitID.Text == "")
             {
                 MessageBox.Show("Please Enter All Details", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -59,7 +60,7 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection(); //open sql connection
                     //insert record to Assistant table
-                    DB.queryingRecord("insert into Assistant values('" + txtFname.Text + "','" + txtEmail.Text + "', '" + txtPhone.Text + "', '" + txtAddress.Text + "')");
+                    DB.queryingRecord("insert into Assistant values('" + txtFname.Text + "','" + txtEmail.Text + "', '" + txtPhone.Text + "', '" + txtAddress.Text + "', '"+txtUnitID.Text+"')");
                     //showing message box
                     MessageBox.Show("Added Successfully", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear_Textbox();//invoke clear textbox method
@@ -163,6 +164,7 @@ namespace E_Shift.Admin_Dashboard
                         txtEmail.Text = dr[2].ToString();
                         txtPhone.Text = dr[3].ToString();
                         txtAddress.Text = dr[4].ToString();
+                        txtUnitID.Text = dr[5].ToString();
                     }
                 }
                 catch (Exception ex)

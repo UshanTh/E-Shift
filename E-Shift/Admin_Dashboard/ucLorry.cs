@@ -59,7 +59,7 @@ namespace E_Shift.Admin_Dashboard
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtLid.Text == "" || txtLorryPlate.Text == "" || txtCont_Id.Text == "" || cmbCapacity.Text == "")
+            if (txtLid.Text == "" || txtLorryPlate.Text == "" || txtCont_Id.Text == "" || cmbCapacity.Text == "" || txtUnitid.Text == "")
             {
                 MessageBox.Show("Please Enter All Texboxes", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -69,9 +69,9 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection(); //open sql connection
                     //insert record to Container table
-                    DB.queryingRecord("insert into Container values('" + txtCont_Id.Text + "','" + cmbCapacity.Text + "')");
+                    DB.queryingRecord("insert into Container values('" + txtCont_Id.Text + "','" + cmbCapacity.Text + "', '"+txtUnitid.Text+"')");
                     //insert record to Lorry table
-                    DB.queryingRecord("insert into Lorry values('" + txtLid.Text + "','" + txtLorryPlate.Text + "', '" + txtCont_Id.Text + "')");
+                    DB.queryingRecord("insert into Lorry values('" + txtLid.Text + "','" + txtLorryPlate.Text + "', '" + txtCont_Id.Text + "', '" + txtUnitid.Text + "')");
                     //showing message box
                     MessageBox.Show("Added Successfully", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -97,6 +97,7 @@ namespace E_Shift.Admin_Dashboard
             txtLid.ResetText();
             txtLorryPlate.ResetText();
             cmbCapacity.SelectedIndex = -1;
+            txtUnitid.ResetText();
         }
 
         private void ucLorry_Load(object sender, EventArgs e)
@@ -152,12 +153,13 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection();
                     //search record in lorry table using lorry id
-                    System.Data.SqlClient.SqlDataReader dr = DB.readRecord("SELECT Lorry.lorry_ID,Lorry.Lorry_PlateNo,Lorry.Cont_ID, Container.Cont_capacity FROM Lorry INNER JOIN Container ON Lorry.Cont_ID = Container.Cont_ID where Lorry.lorry_ID = '" + txtLid.Text + "'");
+                    System.Data.SqlClient.SqlDataReader dr = DB.readRecord("SELECT Lorry.lorry_ID,Lorry.Lorry_PlateNo,Lorry.Cont_ID,Lorry.Unit_ID, Container.Cont_capacity FROM Lorry INNER JOIN Container ON Lorry.Cont_ID = Container.Cont_ID where Lorry.lorry_ID = '" + txtLid.Text + "'");
                     while (dr.Read())
                     {
                         txtLorryPlate.Text = dr[1].ToString();
                         txtCont_Id.Text = dr[2].ToString();
-                        cmbCapacity.Text = dr[3].ToString();
+                        cmbCapacity.Text = dr[4].ToString();
+                        txtUnitid.Text = dr[5].ToString();
                     }
                 }
                 catch (Exception ex)

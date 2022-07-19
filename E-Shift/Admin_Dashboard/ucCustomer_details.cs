@@ -19,6 +19,7 @@ namespace E_Shift.Admin_Dashboard
         int index;
         string email;
         static bool mailSent = false;
+        //private frmCustomer_report cus_Report;
 
         public ucCustomer_details()
         {
@@ -120,6 +121,12 @@ namespace E_Shift.Admin_Dashboard
                 }
                 
             }
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            frmcustomer_Info fcus_btnReport = new frmcustomer_Info();
+            fcus_btnReport.Show();
         }
     }
 }

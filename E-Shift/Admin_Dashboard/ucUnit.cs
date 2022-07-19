@@ -13,19 +13,27 @@ namespace E_Shift.Admin_Dashboard
     public partial class ucUnit : UserControl
     {
         DBase_Cls DB = new DBase_Cls();
-
+        int index;
+        DataGridViewRow row;
         public ucUnit()
         {
             InitializeComponent();
         }
 
-        private void jobTblaod() //load job details
+        private void clear_Textbox()
+        {
+            txtUnit_id.ResetText();
+            cmbUnit_status.SelectedIndex = -1;
+            txtDesc.ResetText();
+            txtJOBid.ResetText();
+        }
+        private void unitTblaod() //load job details
         {
             try
             {
                 DB.openConnection(); //open sql connection
                 //search records in the JOB table
-                DB.showRecords("SELECT * from JOB where Job_Status = 'Approved'", "JOB");
+                DB.showRecords("SELECT * from transport_Unit", "transport_Unit");
                 dgvJob_tbl.DataSource = DB.ds.Tables[0]; //show record in datagrid view
             }
             catch (Exception ex)
@@ -61,7 +69,7 @@ namespace E_Shift.Admin_Dashboard
         }
         private void btnAssign_Click(object sender, EventArgs e)
         {
-            if(txtJobId.Text == "" || cmbUnit_status.Text == "" )
+            if(txtUnit_id.Text == "" || cmbUnit_status.Text == "" || txtJOBid.Text == "")
             {
                 MessageBox.Show("Please Enter All Texboxes", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -71,14 +79,11 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection(); //open sql connection
                     //insert record to unit table
-                    DB.queryingRecord("insert into transport_Unit values('" + cmbUnit_status.Text + "', '" + txtDesc.Text + "','" + txtJobId.Text + "')");
-                    //update job status after assing job id
-                    DB.queryingRecord("update JOB set Job_Status='" + cmbUnit_status.Text + "'");
+                    DB.queryingRecord("insert into transport_Unit values('" + txtUnit_id.Text + "','" + cmbUnit_status.Text + "', '" + txtDesc.Text + "','"+txtJOBid.Text+ "')");
                     //showing message box
-                    MessageBox.Show("Assigned Successfully", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //clear_Textbox();//invoke clear textbox method
-                    updateJob_status();
-                    jobTblaod(); //invoke refresh datagrid view method
+                    MessageBox.Show("Added Successfully", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clear_Textbox();//invoke clear textbox method
+                    unitTblaod(); //invoke refresh datagrid view method
                 }
                 catch (Exception ex) //catch any exception
                 {
@@ -94,7 +99,7 @@ namespace E_Shift.Admin_Dashboard
 
         private void ucUnit_Load(object sender, EventArgs e)
         {
-            jobTblaod();
+           unitTblaod();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -104,12 +109,35 @@ namespace E_Shift.Admin_Dashboard
                 DB.openConnection();
                 DB.queryingRecord("update transport_Unit set Unit_Status='" + cmbUnit_status.Text + "',Description='" + txtDesc.Text + "'");
                 MessageBox.Show("Successfully Updated", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                updateJob_status(); //invoke job status method
-                jobTblaod(); //refresh after update the table
+                unitTblaod(); //refresh after update the table
+                updateJob_status();
             }
             catch (Exception ex)
             {
                 //show error message with exception
+                MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                DB.closeConnection();
+            }
+        }
+
+        private void dgvJob_tbl_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DB.openConnection();
+                //get values to textbox
+                index = e.RowIndex;
+                row = dgvJob_tbl.Rows[index];
+                txtUnit_id.Text = row.Cells["Unit_ID"].Value.ToString();
+                cmbUnit_status.Text = row.Cells["Unit_Status"].Value.ToString();
+                txtDesc.Text = row.Cells["Description"].Value.ToString();
+                txtJOBid.Text = row.Cells["Job_ID"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally

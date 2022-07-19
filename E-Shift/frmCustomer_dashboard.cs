@@ -77,7 +77,7 @@ namespace E_Shift
                 case "My Products":
                     if (this.myProducts == null)
                     {
-                        this.myProducts = new ucProducts();
+                        this.myProducts = new ucProducts(lblUsr.Text);
                         this.pnl_Main.Controls.Add(myProducts);
                         this.myProducts.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.myProducts.Location = new System.Drawing.Point(0, 0);

@@ -55,7 +55,7 @@ namespace E_Shift
             return sqlRead; //return the value
         }
 
-        public void showRecords(string qry, string table_name)
+        public void showRecords(string qry, string table_name) //show records in datagrid view
         {
             sda = new SqlDataAdapter(qry, con);
             ds = new System.Data.DataSet();

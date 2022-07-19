@@ -38,6 +38,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.txtCus_ID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerTbl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.dgvCustomerTbl.Location = new System.Drawing.Point(61, 269);
             this.dgvCustomerTbl.Name = "dgvCustomerTbl";
             this.dgvCustomerTbl.RowTemplate.Height = 24;
-            this.dgvCustomerTbl.Size = new System.Drawing.Size(1105, 434);
+            this.dgvCustomerTbl.Size = new System.Drawing.Size(1105, 361);
             this.dgvCustomerTbl.TabIndex = 102;
             this.dgvCustomerTbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerTbl_CellClick);
             // 
@@ -144,10 +145,23 @@
             this.label4.TabIndex = 136;
             this.label4.Text = "Customer ID";
             // 
+            // btnReport
+            // 
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
+            this.btnReport.Font = new System.Drawing.Font("Helvetica", 13.8F);
+            this.btnReport.Location = new System.Drawing.Point(986, 650);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(180, 62);
+            this.btnReport.TabIndex = 137;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // ucCustomer_details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCus_ID);
             this.Controls.Add(this.btnSave);
@@ -179,5 +193,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtCus_ID;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnReport;
     }
 }

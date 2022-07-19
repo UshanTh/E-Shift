@@ -77,6 +77,9 @@ namespace E_Shift.Admin_Dashboard
                     //insert load id to job product load table
                     DB.queryingRecord("update job_product_load set load_ID = '" + txtLoad_id.Text + "'");
                     MessageBox.Show("Load ID Assign Successfully", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //update job status in job table
+                    DB.queryingRecord("update JOB set Job_Status = '" + cmbLoad_status.Text + "'");
+                    MessageBox.Show("Load ID Assign Successfully", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear_Textbox();//invoke clear textbox method
                     loadtble_load(); //invoke refresh load table
                     job_Product_Loadtble_load();//invoke refresh job_Prodcut_load table
@@ -107,7 +110,7 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection(); //open sql connection
                     //update record in load table
-                    DB.queryingRecord("update load set Load_Status= '" + cmbLoad_status.Text + "' where load_ID = '" + txtLoad_id.Text + "'");
+                    DB.queryingRecord("update load set Load_Status= '" + cmbLoad_status.Text + "', Description = '"+txtDesc.Text+"' where load_ID = '" + txtLoad_id.Text + "'");
                     //update job status after assing job id
                     //DB.queryingRecord("update JOB set Job_Status='" + cmbLoad_status.Text + "'");
                     //showing message box

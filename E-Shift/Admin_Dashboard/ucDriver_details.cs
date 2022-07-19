@@ -28,6 +28,7 @@ namespace E_Shift.Admin_Dashboard
             txtAddress.ResetText();
             txtPhone.ResetText();
             cmbStatus.SelectedIndex = -1;
+            txtUnitid.ResetText();
         }
 
         private void driver_load() //load Driver table records
@@ -51,7 +52,7 @@ namespace E_Shift.Admin_Dashboard
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtFname.Text == "" || txtEmail.Text == "" || txtPhone.Text == "" || txtAddress.Text == "" || cmbStatus.Text == "")
+            if (txtFname.Text == "" || txtEmail.Text == "" || txtPhone.Text == "" || txtAddress.Text == "" || cmbStatus.Text == "" || txtUnitid.Text == "")
             {
                 MessageBox.Show("Please Enter All Details", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -61,7 +62,7 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection(); //open sql connection
                     //insert record to driver table
-                    DB.queryingRecord("insert into Driver values('" + txtFname.Text + "','" + txtEmail.Text + "', '"+txtPhone.Text+"', '"+cmbStatus.Text+"','"+txtAddress.Text+"','"+txtLID.Text+"')");
+                    DB.queryingRecord("insert into Driver values('" + txtFname.Text + "','" + txtEmail.Text + "', '"+txtPhone.Text+"', '"+cmbStatus.Text+"','"+txtAddress.Text+"','"+txtLID.Text+"', '"+txtUnitid.Text+"')");
                     //showing message box
                     MessageBox.Show("Added Successfully", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear_Textbox();//invoke clear textbox method
@@ -156,6 +157,7 @@ namespace E_Shift.Admin_Dashboard
                         cmbStatus.Text = dr[4].ToString();
                         txtAddress.Text = dr[5].ToString();
                         txtLID.Text = dr[6].ToString();
+                        txtUnitid.Text = dr[7].ToString();
                     }
                 }
                 catch (Exception ex)

@@ -51,6 +51,8 @@ namespace E_Shift.Admin_Dashboard
         {
             txtUsr_id.ResetText();
             txtId.ResetText();
+            txtCus_Name.ResetText();
+            txtCus_status.ResetText();
             dtpStrtdate.ResetText();
             dtpEnddate.ResetText();
             dtpStartime.ResetText();
@@ -135,7 +137,7 @@ namespace E_Shift.Admin_Dashboard
                 dtpEndtime.Text = row.Cells["End_Time"].Value.ToString();
                 txtStart_location.Text = row.Cells[5].Value.ToString();
                 txtEnd_location.Text = row.Cells[6].Value.ToString();
-                cmbJob_status.Text = row.Cells[7].Value.ToString();
+                cmbJob_status.Text = row.Cells["Job_Status"].Value.ToString();
                 txtUsr_id.Text = row.Cells[8].Value.ToString();
                 txtCus_Name.Text = row.Cells["Cus_FullName"].Value.ToString();
                 txtCus_status.Text = row.Cells["Cus_Status"].Value.ToString();

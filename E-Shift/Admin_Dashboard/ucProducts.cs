@@ -37,9 +37,11 @@ namespace E_Shift.Admin_Dashboard
                     //insert record to database
                     DB.queryingRecord("insert into Products values('" + txtProName.Text + "', '" + cmbProduct_type.Text + "','" + txtDesc.Text + "', '" + txtCustomerId.Text + "')");
                     //showing message box
-                    MessageBox.Show("Successfully Registered..Please assign to Load", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully Registered..Please assign to Job", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear_Textbox(); //invoke clear textbox method
                     itemlaod(); //invoke refresh datagrid view
+                    AssingJOBID frmassingJOB = new AssingJOBID();
+                    frmassingJOB.Show();
                 }
                 catch (Exception ex) //catch any exception
                 {
@@ -240,7 +242,7 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection();
                     //update products details using product id
-                    DB.queryingRecord("delete * from Products where Pro_ID = '" + txtID.Text + "'");
+                    DB.queryingRecord("delete from Products where Pro_ID = '" + txtID.Text + "'");
                     MessageBox.Show("Successfully Deleted", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     itemlaod(); //refresh after update the table
                 }

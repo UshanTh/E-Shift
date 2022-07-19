@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +55,12 @@
     </Compile>
     <Compile Include="Admin_Dashboard\AssingJOBID.Designer.cs">
       <DependentUpon>AssingJOBID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\frmcustomer_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\frmcustomer_Info.Designer.cs">
+      <DependentUpon>frmcustomer_Info.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin_Dashboard\ucAdmin_dashboard.cs">
       <SubType>UserControl</SubType>
@@ -143,6 +153,11 @@
       <DependentUpon>ucProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="DBase-Cls.cs" />
+    <Compile Include="E_ShiftDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>E_ShiftDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmin_dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +192,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Admin_Dashboard\AssingJOBID.resx">
       <DependentUpon>AssingJOBID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\customer_Details.rdlc" />
+    <EmbeddedResource Include="Admin_Dashboard\frmcustomer_Info.resx">
+      <DependentUpon>frmcustomer_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_Dashboard\ucAdmin_dashboard.resx">
       <DependentUpon>ucAdmin_dashboard.cs</DependentUpon>
@@ -220,6 +239,9 @@
     <EmbeddedResource Include="Cus_Dashboard\ucJobs.resx">
       <DependentUpon>ucJobs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cus_Dashboard\ucProducts.resx">
+      <DependentUpon>ucProducts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin_dashboard.resx">
       <DependentUpon>frmAdmin_dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +266,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="E_ShiftDataSet.xsc">
+      <DependentUpon>E_ShiftDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="E_ShiftDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>E_ShiftDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="E_ShiftDataSet.xss">
+      <DependentUpon>E_ShiftDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

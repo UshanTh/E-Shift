@@ -44,6 +44,8 @@
             this.dgvContainer = new System.Windows.Forms.DataGridView();
             this.cmbCapacity = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.txtUnitid = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLorry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContainer)).BeginInit();
             this.SuspendLayout();
@@ -105,9 +107,9 @@
             // txtCont_Id
             // 
             this.txtCont_Id.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtCont_Id.Location = new System.Drawing.Point(752, 206);
+            this.txtCont_Id.Location = new System.Drawing.Point(756, 206);
             this.txtCont_Id.Name = "txtCont_Id";
-            this.txtCont_Id.Size = new System.Drawing.Size(417, 31);
+            this.txtCont_Id.Size = new System.Drawing.Size(338, 31);
             this.txtCont_Id.TabIndex = 92;
             // 
             // txtLorryPlate
@@ -115,7 +117,7 @@
             this.txtLorryPlate.Font = new System.Drawing.Font("Helvetica", 12F);
             this.txtLorryPlate.Location = new System.Drawing.Point(66, 305);
             this.txtLorryPlate.Name = "txtLorryPlate";
-            this.txtLorryPlate.Size = new System.Drawing.Size(417, 31);
+            this.txtLorryPlate.Size = new System.Drawing.Size(338, 31);
             this.txtLorryPlate.TabIndex = 90;
             // 
             // txtLid
@@ -123,7 +125,7 @@
             this.txtLid.Font = new System.Drawing.Font("Helvetica", 12F);
             this.txtLid.Location = new System.Drawing.Point(66, 206);
             this.txtLid.Name = "txtLid";
-            this.txtLid.Size = new System.Drawing.Size(417, 31);
+            this.txtLid.Size = new System.Drawing.Size(338, 31);
             this.txtLid.TabIndex = 89;
             // 
             // label5
@@ -198,7 +200,7 @@
             "40FT High Cube"});
             this.cmbCapacity.Location = new System.Drawing.Point(756, 304);
             this.cmbCapacity.Name = "cmbCapacity";
-            this.cmbCapacity.Size = new System.Drawing.Size(412, 32);
+            this.cmbCapacity.Size = new System.Drawing.Size(338, 32);
             this.cmbCapacity.TabIndex = 111;
             // 
             // btnClear
@@ -213,10 +215,30 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // txtUnitid
+            // 
+            this.txtUnitid.Font = new System.Drawing.Font("Helvetica", 12F);
+            this.txtUnitid.Location = new System.Drawing.Point(436, 206);
+            this.txtUnitid.Name = "txtUnitid";
+            this.txtUnitid.Size = new System.Drawing.Size(282, 31);
+            this.txtUnitid.TabIndex = 113;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(531, 167);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 24);
+            this.label6.TabIndex = 114;
+            this.label6.Text = "Unit Id";
+            // 
             // ucLorry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtUnitid);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.cmbCapacity);
             this.Controls.Add(this.dgvContainer);
@@ -261,5 +283,7 @@
         private System.Windows.Forms.DataGridView dgvContainer;
         private System.Windows.Forms.ComboBox cmbCapacity;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox txtUnitid;
+        private System.Windows.Forms.Label label6;
     }
 }

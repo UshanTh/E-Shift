@@ -34,6 +34,8 @@
             this.dgvCustomerTbl = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtJobId = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerTbl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,10 +102,30 @@
             this.label1.TabIndex = 138;
             this.label1.Text = "Transport Unit Details";
             // 
+            // txtJobId
+            // 
+            this.txtJobId.Font = new System.Drawing.Font("Helvetica", 12F);
+            this.txtJobId.Location = new System.Drawing.Point(434, 193);
+            this.txtJobId.Name = "txtJobId";
+            this.txtJobId.Size = new System.Drawing.Size(226, 31);
+            this.txtJobId.TabIndex = 145;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(434, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 24);
+            this.label6.TabIndex = 146;
+            this.label6.Text = "Job ID";
+            // 
             // ucUnit_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtJobId);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cmbCus_Status);
             this.Controls.Add(this.label3);
@@ -127,5 +149,7 @@
         private System.Windows.Forms.DataGridView dgvCustomerTbl;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtJobId;
+        private System.Windows.Forms.Label label6;
     }
 }
