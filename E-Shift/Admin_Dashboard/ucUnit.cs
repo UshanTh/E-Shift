@@ -25,7 +25,7 @@ namespace E_Shift.Admin_Dashboard
             txtUnit_id.ResetText();
             cmbUnit_status.SelectedIndex = -1;
             txtDesc.ResetText();
-            txtJOBid.ResetText();
+            //txtJOBid.ResetText();
         }
         private void unitTblaod() //load job details
         {
@@ -47,29 +47,9 @@ namespace E_Shift.Admin_Dashboard
             }
         }
 
-        private void updateJob_status()
-        {
-            try
-            {
-                DB.openConnection(); //open sql connection
-                //update job status 
-                DB.queryingRecord("update JOB set Job_Status='" + cmbUnit_status.Text + "'");
-                //showing message box
-                MessageBox.Show("Job Status Updated", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex) //catch any exception
-            {
-                //show error message with exception
-                MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                DB.closeConnection(); //close sql connection
-            }
-        }
         private void btnAssign_Click(object sender, EventArgs e)
         {
-            if(txtUnit_id.Text == "" || cmbUnit_status.Text == "" || txtJOBid.Text == "")
+            if (txtUnit_id.Text == "" || cmbUnit_status.Text == "")
             {
                 MessageBox.Show("Please Enter All Texboxes", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -79,7 +59,7 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection(); //open sql connection
                     //insert record to unit table
-                    DB.queryingRecord("insert into transport_Unit values('" + txtUnit_id.Text + "','" + cmbUnit_status.Text + "', '" + txtDesc.Text + "','"+txtJOBid.Text+ "')");
+                    DB.queryingRecord("insert into transport_Unit values('" + txtUnit_id.Text + "','" + cmbUnit_status.Text + "', '" + txtDesc.Text + "')");
                     //showing message box
                     MessageBox.Show("Added Successfully", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear_Textbox();//invoke clear textbox method
@@ -104,22 +84,28 @@ namespace E_Shift.Admin_Dashboard
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            if (txtUnit_id.Text == "")
             {
-                DB.openConnection();
-                DB.queryingRecord("update transport_Unit set Unit_Status='" + cmbUnit_status.Text + "',Description='" + txtDesc.Text + "'");
-                MessageBox.Show("Successfully Updated", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                unitTblaod(); //refresh after update the table
-                updateJob_status();
+                MessageBox.Show("Please enter All fields", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else
             {
-                //show error message with exception
-                MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                DB.closeConnection();
+                try
+                {
+                    DB.openConnection();
+                    DB.queryingRecord("update transport_Unit set Unit_Status='" + cmbUnit_status.Text + "',Description='" + txtDesc.Text + "'where Unit_ID= '" + txtUnit_id.Text + "'");
+                    MessageBox.Show("Successfully Updated", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    unitTblaod(); //refresh after update the table
+                }
+                catch (Exception ex)
+                {
+                    //show error message with exception
+                    MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                finally
+                {
+                    DB.closeConnection();
+                }
             }
         }
 
@@ -134,7 +120,7 @@ namespace E_Shift.Admin_Dashboard
                 txtUnit_id.Text = row.Cells["Unit_ID"].Value.ToString();
                 cmbUnit_status.Text = row.Cells["Unit_Status"].Value.ToString();
                 txtDesc.Text = row.Cells["Description"].Value.ToString();
-                txtJOBid.Text = row.Cells["Job_ID"].Value.ToString();
+                //txtJOBid.Text = row.Cells["Job_ID"].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -144,6 +130,17 @@ namespace E_Shift.Admin_Dashboard
             {
                 DB.closeConnection();
             }
+        }
+
+        private void btnUnit_Details_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUnit_Details_Click_1(object sender, EventArgs e)
+        {
+            frmUnit_Details frm_Unit = new frmUnit_Details();
+            frm_Unit.Show();
         }
     }
 }

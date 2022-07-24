@@ -16,6 +16,7 @@ namespace E_Shift.Admin_Dashboard
         int index;
         DataGridViewRow row;
 
+
         public ucProducts()
         {
             InitializeComponent();
@@ -33,11 +34,13 @@ namespace E_Shift.Admin_Dashboard
             {
                 try
                 {
+                    
                     DB.openConnection(); //open sql connection
                     //insert record to database
                     DB.queryingRecord("insert into Products values('" + txtProName.Text + "', '" + cmbProduct_type.Text + "','" + txtDesc.Text + "', '" + txtCustomerId.Text + "')");
                     //showing message box
                     MessageBox.Show("Successfully Registered..Please assign to Job", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     clear_Textbox(); //invoke clear textbox method
                     itemlaod(); //invoke refresh datagrid view
                     AssingJOBID frmassingJOB = new AssingJOBID();
@@ -95,7 +98,7 @@ namespace E_Shift.Admin_Dashboard
             try
             {
                 DB.openConnection(); //open sql connection
-                DB.showRecords("SELECT Products.Pro_ID,Products.Pro_name,Products.Pro_type,Products.Pro_desc, Customer.Cus_ID, Customer.Cus_FullName FROM Products INNER JOIN Customer ON Products.Cus_ID=Customer.Cus_ID;", "Products"); //search records in the product table
+                DB.showRecords("SELECT * from Products", "Products"); //search records in the product table
                 dgvProduct_tbl.DataSource = DB.ds.Tables[0]; //show record in datagrid view
             }
             catch (Exception ex)
@@ -116,7 +119,11 @@ namespace E_Shift.Admin_Dashboard
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (cmbSearchBy.Text == "") //if search by null 
+            if (cmbSearchBy.Text == "")
+            {
+                MessageBox.Show("Please Select Customer ID or Product ID", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txtID.Text == "") //if search by null textbox
             {
                 //then show error message
                 MessageBox.Show("Please Select ID", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -211,7 +218,7 @@ namespace E_Shift.Admin_Dashboard
                 cmbProduct_type.Text = row.Cells[2].Value.ToString();
                 txtDesc.Text = row.Cells[3].Value.ToString();
                 txtCustomerId.Text = row.Cells[4].Value.ToString();
-                txtCustomername.Text = row.Cells[5].Value.ToString();
+                //txtCustomername.Text = row.Cells[5].Value.ToString();
             }
             catch(Exception ex)
             {
@@ -245,6 +252,7 @@ namespace E_Shift.Admin_Dashboard
                     DB.queryingRecord("delete from Products where Pro_ID = '" + txtID.Text + "'");
                     MessageBox.Show("Successfully Deleted", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     itemlaod(); //refresh after update the table
+                    clear_Textbox(); //invoke clear textbox method
                 }
                 catch (Exception ex)
                 {
@@ -255,6 +263,29 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.closeConnection();
                 }
+            }
+        }
+
+        private void txtCustomerId_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DB.openConnection();
+                //search relevent record in customer table using customer id
+                System.Data.SqlClient.SqlDataReader dr = DB.readRecord("Select * from customer where Cus_ID='" + txtCustomerId.Text + "'");
+                while (dr.Read())
+                {
+                    //display customer name 
+                    txtCustomername.Text = dr[1].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                DB.closeConnection();
             }
         }
     }

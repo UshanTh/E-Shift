@@ -158,8 +158,8 @@ namespace E_Shift.Admin_Dashboard
                     {
                         txtLorryPlate.Text = dr[1].ToString();
                         txtCont_Id.Text = dr[2].ToString();
-                        cmbCapacity.Text = dr[4].ToString();
-                        txtUnitid.Text = dr[5].ToString();
+                        txtUnitid.Text = dr[3].ToString();
+                        cmbCapacity.Text = dr[4].ToString();            
                     }
                 }
                 catch (Exception ex)

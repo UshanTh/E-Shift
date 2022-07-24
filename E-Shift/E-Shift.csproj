@@ -56,11 +56,23 @@
     <Compile Include="Admin_Dashboard\AssingJOBID.Designer.cs">
       <DependentUpon>AssingJOBID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Dashboard\frmAll_jobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\frmAll_jobs.Designer.cs">
+      <DependentUpon>frmAll_jobs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin_Dashboard\frmcustomer_Info.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin_Dashboard\frmcustomer_Info.Designer.cs">
       <DependentUpon>frmcustomer_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Dashboard\frmUnit_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashboard\frmUnit_Details.Designer.cs">
+      <DependentUpon>frmUnit_Details.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin_Dashboard\ucAdmin_dashboard.cs">
       <SubType>UserControl</SubType>
@@ -194,8 +206,14 @@
       <DependentUpon>AssingJOBID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_Dashboard\customer_Details.rdlc" />
+    <EmbeddedResource Include="Admin_Dashboard\frmAll_jobs.resx">
+      <DependentUpon>frmAll_jobs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_Dashboard\frmcustomer_Info.resx">
       <DependentUpon>frmcustomer_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Dashboard\frmUnit_Details.resx">
+      <DependentUpon>frmUnit_Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_Dashboard\ucAdmin_dashboard.resx">
       <DependentUpon>ucAdmin_dashboard.cs</DependentUpon>

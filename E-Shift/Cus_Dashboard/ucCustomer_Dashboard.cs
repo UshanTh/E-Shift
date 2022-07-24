@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace E_Shift.Cus_Dashboard
 {
@@ -14,6 +15,7 @@ namespace E_Shift.Cus_Dashboard
     {
         DBase_Cls DB = new DBase_Cls();
         string Usrname;
+        SqlConnection con = new SqlConnection("Data Source = LAPTOP-9MO4U183; Initial Catalog = E_Shift; Integrated Security = True");
 
         public ucCustomer_Dashboard(string username)
         {
@@ -21,40 +23,48 @@ namespace E_Shift.Cus_Dashboard
             Usrname = username ;
         }
 
-        private void ucCustomer_Dashboard_Load(object sender, EventArgs e)
+        private void jobs_Count()
         {
             try
             {
-                DB.openConnection(); //open sql connection
-                DB.showRecords("SELECT COUNT(Customer.Cus_Username) FROM JOB INNER JOIN Customer ON JOB.Cus_ID=Customer.Cus_ID where Customer.Cus_Username ='" + Usrname + "'", "JOB"); //search records in the product table
-                lbljobs_Count.Text = DB.Dtable.Rows.Count.ToString(); //show record in datagrid view
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(Customer.Cus_Username) FROM JOB INNER JOIN Customer ON JOB.Cus_ID=Customer.Cus_ID where Customer.Cus_Username ='" + Usrname + "'", con);
+                var count = cmd.ExecuteScalar();
+                lbljobs_Count.Text = count.ToString();
             }
             catch (Exception ex)
             {
-                //display error message
                 MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                DB.closeConnection(); //close connection
+                con.Close();
             }
+        }
+        
+        private void proudct_Count()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(Customer.Cus_Username) FROM Products INNER JOIN Customer ON Products.Cus_ID=Customer.Cus_ID where Customer.Cus_Username ='" + Usrname + "'", con);
+                var count = cmd.ExecuteScalar();
+                lblgoods_Count.Text = count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
-            //try
-            //{
-            //    DB.openConnection();
-            //    //then check his username and password
-            //    DB.login("SELECT COUNT(Customer.Cus_Username) FROM JOB INNER JOIN Customer ON JOB.Cus_ID=Customer.Cus_ID where Customer.Cus_Username ='" + Usrname + "'");
-            //    lbljobs_Count.Text = DB.Dtable.Rows.Count.ToString();
-            //}
-            //catch (Exception ex) //catch error in database 
-            //{
-            //    //show the error message
-            //    MessageBox.Show("Error : " + ex.Message, "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //finally
-            //{
-            //    DB.closeConnection(); // close sql connection
-            //}
+        private void ucCustomer_Dashboard_Load(object sender, EventArgs e)
+        {
+            jobs_Count();
+            proudct_Count();
         }
     }
 }

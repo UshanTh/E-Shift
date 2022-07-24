@@ -45,7 +45,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(248, 278);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 115);
+            this.panel1.Size = new System.Drawing.Size(273, 115);
             this.panel1.TabIndex = 0;
             // 
             // lbljobs_Count
@@ -74,7 +74,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.lblgoods_Count);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(767, 278);
+            this.panel2.Location = new System.Drawing.Point(661, 278);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(274, 115);
             this.panel2.TabIndex = 0;

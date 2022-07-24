@@ -94,15 +94,17 @@ namespace E_Shift.Admin_Dashboard
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtCus_ID.Text == "")
+            if (txtCus_ID.Text == "") // check customer is null
             {
+                //display message box
                 MessageBox.Show("Please Enter Customer id ", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 try
                 {
-                    DB.openConnection();
+                    DB.openConnection(); //open sql connection
+                    //update customer status using customer id
                     DB.queryingRecord("update customer set Cus_Status= '" + cmbCus_Status.Text + "' where Cus_ID = '"+txtCus_ID.Text+"'");
                     MessageBox.Show("Update Successfully ", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Customer_Tblaod(); //invoke customer table load method

@@ -36,7 +36,7 @@ namespace E_Shift.Admin_Dashboard
             try
             {
                 DB.openConnection(); //open sql connection
-                DB.showRecords("SELECT Driver.Driver_ID, Driver.FullName,Driver.Email,Driver.TellNo,Driver.D_Status,Driver.D_Address,Driver.lorry_ID,Lorry.Cont_ID FROM Driver INNER JOIN Lorry ON Driver.lorry_ID = Lorry.lorry_ID", "Driver"); //search records in the lorry table
+                DB.showRecords("SELECT Driver.Driver_ID,Driver.Unit_ID, Driver.FullName,Driver.Email,Driver.TellNo,Driver.D_Status,Driver.D_Address,Driver.lorry_ID,Lorry.Cont_ID FROM Driver INNER JOIN Lorry ON Driver.lorry_ID = Lorry.lorry_ID", "Driver"); //search records in the lorry table
                 dgvDriver.DataSource = DB.ds.Tables[0]; //show record in datagrid view
             }
             catch (Exception ex)

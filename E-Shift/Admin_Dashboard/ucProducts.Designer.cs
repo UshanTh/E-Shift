@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtDesc = new System.Windows.Forms.TextBox();
@@ -81,7 +81,7 @@
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(417, 59);
-            this.txtDesc.TabIndex = 71;
+            this.txtDesc.TabIndex = 3;
             // 
             // txtProName
             // 
@@ -89,7 +89,7 @@
             this.txtProName.Location = new System.Drawing.Point(50, 380);
             this.txtProName.Name = "txtProName";
             this.txtProName.Size = new System.Drawing.Size(417, 31);
-            this.txtProName.TabIndex = 62;
+            this.txtProName.TabIndex = 1;
             // 
             // label8
             // 
@@ -144,13 +144,13 @@
             this.cmbProduct_type.Location = new System.Drawing.Point(50, 464);
             this.cmbProduct_type.Name = "cmbProduct_type";
             this.cmbProduct_type.Size = new System.Drawing.Size(417, 32);
-            this.cmbProduct_type.TabIndex = 83;
+            this.cmbProduct_type.TabIndex = 2;
             // 
             // dgvProduct_tbl
             // 
             this.dgvProduct_tbl.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvProduct_tbl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvProduct_tbl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProduct_tbl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProduct_tbl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct_tbl.Location = new System.Drawing.Point(535, 262);
@@ -174,7 +174,8 @@
             this.txtCustomerId.Location = new System.Drawing.Point(50, 205);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.Size = new System.Drawing.Size(417, 31);
-            this.txtCustomerId.TabIndex = 87;
+            this.txtCustomerId.TabIndex = 0;
+            this.txtCustomerId.TextChanged += new System.EventHandler(this.txtCustomerId_TextChanged);
             this.txtCustomerId.Leave += new System.EventHandler(this.txtCustomerId_Leave);
             // 
             // label5

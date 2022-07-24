@@ -19,6 +19,7 @@ namespace E_Shift
         public DataSet ds;
         public string password;
         public string confirm_Password;
+        public SqlDataReader count;
         String sql;
 
         public SqlConnection openConnection() //Open sql Connection
@@ -57,9 +58,16 @@ namespace E_Shift
 
         public void showRecords(string qry, string table_name) //show records in datagrid view
         {
-            sda = new SqlDataAdapter(qry, con);
-            ds = new System.Data.DataSet();
-            sda.Fill(ds, table_name);      
+            sda = new SqlDataAdapter(qry, con); //set the data adapter object
+            ds = new System.Data.DataSet(); //set the data set object
+            sda.Fill(ds, table_name); //data adapter fill with data set and table name
+        }
+
+        public SqlDataReader get_Count(string qry)
+        {
+            cmd = new SqlCommand(qry, con);
+            count = cmd.ExecuteReader();
+            return count;
         }
 
     }

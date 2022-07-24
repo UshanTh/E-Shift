@@ -29,17 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcustomer_Info));
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.e_ShiftDataSet = new E_Shift.E_ShiftDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.eShiftDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new E_Shift.E_ShiftDataSetTableAdapters.customerTableAdapter();
             this.tableAdapterManager = new E_Shift.E_ShiftDataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.e_ShiftDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eShiftDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "customer";
+            this.customerBindingSource.DataSource = this.e_ShiftDataSet;
             // 
             // e_ShiftDataSet
             // 
@@ -48,24 +54,21 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.customerBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.customerBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "E_Shift.Admin_Dashboard.customer_Details.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(24, 25);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1069, 534);
+            this.reportViewer1.Size = new System.Drawing.Size(1135, 594);
             this.reportViewer1.TabIndex = 0;
             // 
             // eShiftDataSetBindingSource
             // 
             this.eShiftDataSetBindingSource.DataSource = this.e_ShiftDataSet;
             this.eShiftDataSetBindingSource.Position = 0;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "customer";
-            this.customerBindingSource.DataSource = this.e_ShiftDataSet;
             // 
             // customerTableAdapter
             // 
@@ -83,12 +86,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 594);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmcustomer_Info";
-            this.Text = "frmcustomer_Info";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Customer Information";
             this.Load += new System.EventHandler(this.frmcustomer_Info_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.e_ShiftDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eShiftDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

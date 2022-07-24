@@ -56,7 +56,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
             this.btnSave.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnSave.Location = new System.Drawing.Point(855, 599);
+            this.btnSave.Location = new System.Drawing.Point(855, 602);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(154, 61);
             this.btnSave.TabIndex = 147;
@@ -70,12 +70,12 @@
             this.cmbLoad_status.Font = new System.Drawing.Font("Helvetica", 12F);
             this.cmbLoad_status.FormattingEnabled = true;
             this.cmbLoad_status.Items.AddRange(new object[] {
-            "Packing",
-            "Ready"});
+            "Load Packing",
+            "Load Ready"});
             this.cmbLoad_status.Location = new System.Drawing.Point(63, 500);
             this.cmbLoad_status.Name = "cmbLoad_status";
             this.cmbLoad_status.Size = new System.Drawing.Size(413, 32);
-            this.cmbLoad_status.TabIndex = 146;
+            this.cmbLoad_status.TabIndex = 3;
             // 
             // dgvLoad_tbl
             // 
@@ -83,7 +83,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvLoad_tbl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLoad_tbl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLoad_tbl.Location = new System.Drawing.Point(533, 390);
+            this.dgvLoad_tbl.Location = new System.Drawing.Point(533, 393);
             this.dgvLoad_tbl.Name = "dgvLoad_tbl";
             this.dgvLoad_tbl.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvLoad_tbl.RowTemplate.Height = 24;
@@ -103,11 +103,11 @@
             // 
             this.btnAssign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
             this.btnAssign.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnAssign.Location = new System.Drawing.Point(533, 599);
+            this.btnAssign.Location = new System.Drawing.Point(533, 602);
             this.btnAssign.Name = "btnAssign";
             this.btnAssign.Size = new System.Drawing.Size(157, 61);
             this.btnAssign.TabIndex = 137;
-            this.btnAssign.Text = "Assign";
+            this.btnAssign.Text = "Add";
             this.btnAssign.UseVisualStyleBackColor = false;
             this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
             // 
@@ -118,15 +118,16 @@
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(417, 61);
-            this.txtDesc.TabIndex = 136;
+            this.txtDesc.TabIndex = 4;
             // 
             // txtUnit_ID
             // 
             this.txtUnit_ID.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtUnit_ID.Location = new System.Drawing.Point(63, 324);
+            this.txtUnit_ID.Location = new System.Drawing.Point(59, 404);
             this.txtUnit_ID.Name = "txtUnit_ID";
+            this.txtUnit_ID.ReadOnly = true;
             this.txtUnit_ID.Size = new System.Drawing.Size(417, 31);
-            this.txtUnit_ID.TabIndex = 135;
+            this.txtUnit_ID.TabIndex = 2;
             // 
             // txtLoad_id
             // 
@@ -134,7 +135,7 @@
             this.txtLoad_id.Location = new System.Drawing.Point(63, 227);
             this.txtLoad_id.Name = "txtLoad_id";
             this.txtLoad_id.Size = new System.Drawing.Size(417, 31);
-            this.txtLoad_id.TabIndex = 134;
+            this.txtLoad_id.TabIndex = 0;
             // 
             // label8
             // 
@@ -160,7 +161,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(63, 287);
+            this.label6.Location = new System.Drawing.Point(59, 367);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 24);
             this.label6.TabIndex = 140;
@@ -189,16 +190,17 @@
             // txtJob_ID
             // 
             this.txtJob_ID.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtJob_ID.Location = new System.Drawing.Point(63, 413);
+            this.txtJob_ID.Location = new System.Drawing.Point(63, 316);
             this.txtJob_ID.Name = "txtJob_ID";
             this.txtJob_ID.Size = new System.Drawing.Size(417, 31);
-            this.txtJob_ID.TabIndex = 148;
+            this.txtJob_ID.TabIndex = 1;
+            this.txtJob_ID.MouseLeave += new System.EventHandler(this.txtJob_ID_MouseLeave);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 375);
+            this.label3.Location = new System.Drawing.Point(63, 278);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 24);
             this.label3.TabIndex = 149;
@@ -210,7 +212,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvjob_Product_load.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvjob_Product_load.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvjob_Product_load.Location = new System.Drawing.Point(533, 188);
+            this.dgvjob_Product_load.Location = new System.Drawing.Point(533, 199);
             this.dgvjob_Product_load.Name = "dgvjob_Product_load";
             this.dgvjob_Product_load.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvjob_Product_load.RowTemplate.Height = 24;
@@ -221,7 +223,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
             this.btnSearch.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnSearch.Location = new System.Drawing.Point(694, 599);
+            this.btnSearch.Location = new System.Drawing.Point(694, 602);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(157, 61);
             this.btnSearch.TabIndex = 151;
@@ -233,7 +235,7 @@
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
             this.btnClear.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnClear.Location = new System.Drawing.Point(1013, 599);
+            this.btnClear.Location = new System.Drawing.Point(1013, 602);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(154, 61);
             this.btnClear.TabIndex = 152;

@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAssign = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvJob_tbl = new System.Windows.Forms.DataGridView();
-            this.btnUnit_Details = new System.Windows.Forms.Button();
             this.cmbUnit_status = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUnit_id = new System.Windows.Forms.TextBox();
-            this.txtJOBid = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnUnit_Details = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJob_tbl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,17 +53,17 @@
             this.panel1.Size = new System.Drawing.Size(1242, 2);
             this.panel1.TabIndex = 78;
             // 
-            // btnAssign
+            // btnAdd
             // 
-            this.btnAssign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
-            this.btnAssign.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnAssign.Location = new System.Drawing.Point(584, 599);
-            this.btnAssign.Name = "btnAssign";
-            this.btnAssign.Size = new System.Drawing.Size(197, 61);
-            this.btnAssign.TabIndex = 69;
-            this.btnAssign.Text = "Add";
-            this.btnAssign.UseVisualStyleBackColor = false;
-            this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
+            this.btnAdd.Font = new System.Drawing.Font("Helvetica", 13.8F);
+            this.btnAdd.Location = new System.Drawing.Point(505, 599);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(197, 61);
+            this.btnAdd.TabIndex = 69;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAssign_Click);
             // 
             // txtDesc
             // 
@@ -72,8 +71,8 @@
             this.txtDesc.Location = new System.Drawing.Point(39, 529);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(226, 81);
-            this.txtDesc.TabIndex = 68;
+            this.txtDesc.Size = new System.Drawing.Size(337, 81);
+            this.txtDesc.TabIndex = 2;
             // 
             // label8
             // 
@@ -108,9 +107,10 @@
             // dgvJob_tbl
             // 
             this.dgvJob_tbl.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvJob_tbl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvJob_tbl.Location = new System.Drawing.Point(584, 203);
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvJob_tbl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvJob_tbl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvJob_tbl.Location = new System.Drawing.Point(505, 200);
             this.dgvJob_tbl.Name = "dgvJob_tbl";
             this.dgvJob_tbl.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvJob_tbl.RowTemplate.Height = 24;
@@ -118,36 +118,23 @@
             this.dgvJob_tbl.TabIndex = 86;
             this.dgvJob_tbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJob_tbl_CellClick);
             // 
-            // btnUnit_Details
-            // 
-            this.btnUnit_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
-            this.btnUnit_Details.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnUnit_Details.Location = new System.Drawing.Point(988, 599);
-            this.btnUnit_Details.Name = "btnUnit_Details";
-            this.btnUnit_Details.Size = new System.Drawing.Size(197, 61);
-            this.btnUnit_Details.TabIndex = 87;
-            this.btnUnit_Details.Text = "Assign Details";
-            this.btnUnit_Details.UseVisualStyleBackColor = false;
-            // 
             // cmbUnit_status
             // 
             this.cmbUnit_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnit_status.Font = new System.Drawing.Font("Helvetica", 12F);
             this.cmbUnit_status.FormattingEnabled = true;
             this.cmbUnit_status.Items.AddRange(new object[] {
-            "Ready",
-            "Delivering",
-            "Delivered"});
+            "Ready"});
             this.cmbUnit_status.Location = new System.Drawing.Point(39, 384);
             this.cmbUnit_status.Name = "cmbUnit_status";
-            this.cmbUnit_status.Size = new System.Drawing.Size(222, 32);
-            this.cmbUnit_status.TabIndex = 132;
+            this.cmbUnit_status.Size = new System.Drawing.Size(333, 32);
+            this.cmbUnit_status.TabIndex = 1;
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
             this.btnSave.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnSave.Location = new System.Drawing.Point(786, 599);
+            this.btnSave.Location = new System.Drawing.Point(707, 599);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(197, 61);
             this.btnSave.TabIndex = 133;
@@ -170,39 +157,43 @@
             this.txtUnit_id.Font = new System.Drawing.Font("Helvetica", 12F);
             this.txtUnit_id.Location = new System.Drawing.Point(39, 227);
             this.txtUnit_id.Name = "txtUnit_id";
-            this.txtUnit_id.Size = new System.Drawing.Size(226, 31);
-            this.txtUnit_id.TabIndex = 62;
+            this.txtUnit_id.Size = new System.Drawing.Size(337, 31);
+            this.txtUnit_id.TabIndex = 0;
             // 
-            // txtJOBid
+            // btnClear
             // 
-            this.txtJOBid.Font = new System.Drawing.Font("Helvetica", 12F);
-            this.txtJOBid.Location = new System.Drawing.Point(310, 227);
-            this.txtJOBid.Name = "txtJOBid";
-            this.txtJOBid.Size = new System.Drawing.Size(226, 31);
-            this.txtJOBid.TabIndex = 134;
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
+            this.btnClear.Font = new System.Drawing.Font("Helvetica", 13.8F);
+            this.btnClear.Location = new System.Drawing.Point(909, 599);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(197, 61);
+            this.btnClear.TabIndex = 134;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // btnUnit_Details
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(310, 188);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 24);
-            this.label4.TabIndex = 136;
-            this.label4.Text = "JOB ID";
+            this.btnUnit_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(114)))), ((int)(((byte)(159)))));
+            this.btnUnit_Details.Font = new System.Drawing.Font("Helvetica", 13.8F);
+            this.btnUnit_Details.Location = new System.Drawing.Point(671, 677);
+            this.btnUnit_Details.Name = "btnUnit_Details";
+            this.btnUnit_Details.Size = new System.Drawing.Size(269, 53);
+            this.btnUnit_Details.TabIndex = 135;
+            this.btnUnit_Details.Text = "Assigned Unit Details";
+            this.btnUnit_Details.UseVisualStyleBackColor = false;
+            this.btnUnit_Details.Click += new System.EventHandler(this.btnUnit_Details_Click_1);
             // 
             // ucUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtJOBid);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnUnit_Details);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cmbUnit_status);
-            this.Controls.Add(this.btnUnit_Details);
             this.Controls.Add(this.dgvJob_tbl);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnAssign);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtUnit_id);
             this.Controls.Add(this.label8);
@@ -221,18 +212,17 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnAssign;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvJob_tbl;
-        private System.Windows.Forms.Button btnUnit_Details;
         private System.Windows.Forms.ComboBox cmbUnit_status;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUnit_id;
-        private System.Windows.Forms.TextBox txtJOBid;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnUnit_Details;
     }
 }

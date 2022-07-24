@@ -33,7 +33,7 @@ namespace E_Shift.Admin_Dashboard
                 {
                     DB.openConnection(); //open sql connection
                     //insert record to database
-                    DB.queryingRecord("insert into job_product_load values('" + txtJob_ID.Text + "', '" + txtPro_id.Text + "', null)");
+                    DB.queryingRecord("insert into job_product values('" + txtJob_ID.Text + "', '" + txtPro_id.Text + "')");
                     //showing message box
                     MessageBox.Show("Assign Registered..Please assign to Load", "E-Shift", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

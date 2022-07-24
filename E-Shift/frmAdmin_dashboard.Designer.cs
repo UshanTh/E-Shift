@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin_dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnJobs = new System.Windows.Forms.Button();
             this.btnAssistant = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnDriver = new System.Windows.Forms.Button();
@@ -37,16 +38,15 @@
             this.btnUnit = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
-            this.btnJobs = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUsr = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_Main = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,14 +55,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.btnProduct);
+            this.panel1.Controls.Add(this.btnJobs);
             this.panel1.Controls.Add(this.btnAssistant);
             this.panel1.Controls.Add(this.btnProfile);
             this.panel1.Controls.Add(this.btnDriver);
             this.panel1.Controls.Add(this.btnLorry);
             this.panel1.Controls.Add(this.btnUnit);
             this.panel1.Controls.Add(this.btnLoad);
-            this.panel1.Controls.Add(this.btnProduct);
-            this.panel1.Controls.Add(this.btnJobs);
             this.panel1.Controls.Add(this.btnCustomer);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.panel3);
@@ -71,6 +71,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(339, 840);
             this.panel1.TabIndex = 0;
+            // 
+            // btnJobs
+            // 
+            this.btnJobs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnJobs.Font = new System.Drawing.Font("Helvetica", 13.8F);
+            this.btnJobs.ForeColor = System.Drawing.Color.Black;
+            this.btnJobs.Location = new System.Drawing.Point(12, 271);
+            this.btnJobs.Name = "btnJobs";
+            this.btnJobs.Size = new System.Drawing.Size(316, 60);
+            this.btnJobs.TabIndex = 2;
+            this.btnJobs.Text = "Job Details";
+            this.btnJobs.UseVisualStyleBackColor = false;
+            this.btnJobs.Click += new System.EventHandler(this.btnJobs_Click);
             // 
             // btnAssistant
             // 
@@ -170,20 +184,6 @@
             this.btnProduct.UseVisualStyleBackColor = false;
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
-            // btnJobs
-            // 
-            this.btnJobs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnJobs.Font = new System.Drawing.Font("Helvetica", 13.8F);
-            this.btnJobs.ForeColor = System.Drawing.Color.Black;
-            this.btnJobs.Location = new System.Drawing.Point(12, 271);
-            this.btnJobs.Name = "btnJobs";
-            this.btnJobs.Size = new System.Drawing.Size(316, 60);
-            this.btnJobs.TabIndex = 2;
-            this.btnJobs.Text = "Job Details";
-            this.btnJobs.UseVisualStyleBackColor = false;
-            this.btnJobs.Click += new System.EventHandler(this.btnJobs_Click);
-            // 
             // btnCustomer
             // 
             this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -222,6 +222,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(339, 92);
             this.panel3.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel4.Location = new System.Drawing.Point(0, 91);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1242, 1);
+            this.panel4.TabIndex = 0;
             // 
             // label2
             // 
@@ -274,14 +282,6 @@
             this.pnl_Main.Name = "pnl_Main";
             this.pnl_Main.Size = new System.Drawing.Size(1242, 748);
             this.pnl_Main.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(0, 91);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1242, 1);
-            this.panel4.TabIndex = 0;
             // 
             // frmAdmin_dashboard
             // 
